@@ -16,6 +16,7 @@ public class Invisible : MonoBehaviour
 
         textC1.enabled = false;
         textC2.enabled = false;
+
         textC3.enabled = false;
         textC4.enabled = false;
     }
