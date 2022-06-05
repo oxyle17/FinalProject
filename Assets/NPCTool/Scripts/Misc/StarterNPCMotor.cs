@@ -6,16 +6,16 @@ public class StarterNPCMotor : MonoBehaviour
 {
 	[Header("Movement")]
 	[Tooltip("Move speed of the character in m/s")]
-	public float m_MoveSpeed = 2.0f;
+	public float m_MoveSpeed =0f;
 	[Tooltip("How fast the character turns to face movement direction")]
-	[Range(0.0f, 0.3f)]
+	[Range(0.0f, 0f)]
 	private float m_RotationSmoothTime = 0.12f;
 	[Tooltip("Acceleration and deceleration")]
 	private float m_SpeedChangeRate = 10.0f;
 
 	private CharacterController m_Controller;
 
-	private float _speed;
+	private float _speed = 0;
 	private float _animationBlend;
 	private float _targetRotation = 0.0f;
 	private float _rotationVelocity;
@@ -23,10 +23,18 @@ public class StarterNPCMotor : MonoBehaviour
 
 	private void Awake()
 	{
-		m_Controller = GetComponent<CharacterController>();
+		
 	}
 
-	public void Move(Vector2 move)
+    private void OnTriggerEnter(Collider other)
+    {
+		m_Controller = GetComponent<CharacterController>();
+		_speed = 3;
+		m_MoveSpeed = 2.0f;
+
+	}
+
+    public void Move(Vector2 move)
 	{
 		// set target speed based on move speed, sprint speed and if sprint is pressed
 		float targetSpeed = m_MoveSpeed;
@@ -75,4 +83,8 @@ public class StarterNPCMotor : MonoBehaviour
 		// move the npc
 		m_Controller.Move(targetDirection.normalized * (_speed * Time.deltaTime) + new Vector3(0.0f, _verticalVelocity, 0.0f) * Time.deltaTime);
 	}
+
+	
+
+
 }
