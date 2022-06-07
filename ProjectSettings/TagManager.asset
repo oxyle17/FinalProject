@@ -9,6 +9,7 @@ TagManager:
   - Pickobject
   - Door
   - NPC
+  - SpeedUp
   layers:
   - Default
   - TransparentFX

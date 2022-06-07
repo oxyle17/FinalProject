@@ -90,7 +90,7 @@ public class door : MonoBehaviour
         for (; ; )
         {
             yield return new WaitForSeconds(0.1f);
-            transform.position = Vector3.MoveTowards(transform.position, openPos, 40 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, openPos, 70 * Time.deltaTime);
             if (isOpen == true)
             {
                 break;
@@ -110,7 +110,7 @@ public class door : MonoBehaviour
         {
 
             yield return new WaitForSeconds(0.1f);
-            transform.position = Vector3.MoveTowards(transform.position, closePos, 40 * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, closePos, 70 * Time.deltaTime);
             if (isOpen == true)
             {
                 break;

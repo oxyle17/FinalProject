@@ -23,35 +23,6 @@ public class AttackUI : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.E))
-        {
-
-            idle.enabled = false;
-          
-
-        }
-        if (Input.GetKeyUp(KeyCode.E))
-        {
-
-            idle.enabled = true;
-          
-        }
-
-
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-           
-            idle.enabled = false;
-            
-        }
-
-
-        if (Input.GetKeyUp(KeyCode.R))
-        {
-            idle.enabled = true;
-            
-        }
-
 
     }
 }
