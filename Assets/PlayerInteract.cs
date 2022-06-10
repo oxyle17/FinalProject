@@ -61,6 +61,12 @@ public class PlayerInteract : MonoBehaviour
                         Destroy(InteractedGameObject);
                         mice++;
                         break;
+                    case interactTypes.quest1Fin:
+                        if (mice == 9)
+                        {
+                            InteractedGameObject.GetComponent<Quest1Fin>().Quest1End();
+                        }
+                        break;
                 }
 
 
