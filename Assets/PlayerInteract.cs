@@ -67,6 +67,9 @@ public class PlayerInteract : MonoBehaviour
                             InteractedGameObject.GetComponent<Quest1Fin>().Quest1End();
                         }
                         break;
+                    case interactTypes.quest2Start:
+                        InteractedGameObject.GetComponent<BlackJackStarter>().BlackJackStart();
+                        break;
                 }
 
 

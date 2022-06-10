@@ -4,7 +4,7 @@ using UnityEngine;
 
 public enum interactTypes
 {
-    pickup, destroy, quest1Start, mice, quest1Fin
+    pickup, destroy, quest1Start, mice, quest1Fin, quest2Start
 }
 
 public class IneractionDome : MonoBehaviour
