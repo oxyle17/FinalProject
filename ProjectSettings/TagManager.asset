@@ -10,6 +10,7 @@ TagManager:
   - Door
   - NPC
   - SpeedUp
+  - Quest1
   layers:
   - Default
   - TransparentFX

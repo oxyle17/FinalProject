@@ -8,7 +8,7 @@ public class StartQuest : MonoBehaviour
     public Transform changeTo;
 
     [SerializeField] Canvas a1;
-    [SerializeField] AudioSource s1;
+
 
 
     void Start()
@@ -47,7 +47,7 @@ public class StartQuest : MonoBehaviour
             other.transform.position = changeTo.position;
 
             a1.enabled = true;
-            s1.Play();
+           
 
 
 
