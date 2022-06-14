@@ -12,11 +12,13 @@ public class MouseScript : MonoBehaviour
 
     public Vector3 WalkPoint;
     bool WalkPointSet;
-    bool destinationSet;
+    public float minWalkPointRange = 7;
     public float WalkPointRange = 10;
 
     public Animator animator;
 
+    public float decisionInterval = 0.3f;
+    public float timeSinceLastDecision = 1;
 
 
     private void Awake()
@@ -37,7 +39,7 @@ public class MouseScript : MonoBehaviour
     void Update()
     {
 
-            Idle();
+        Idle();
         
 
     }
@@ -45,13 +47,15 @@ public class MouseScript : MonoBehaviour
 
     private void Idle()
     {
-        if (!WalkPointSet) SearchWalkPoint();
+        timeSinceLastDecision += Time.deltaTime;
 
-        if (WalkPointSet && !destinationSet)
+        if (!WalkPointSet || timeSinceLastDecision > decisionInterval) SearchWalkPoint();
+
+        if (WalkPointSet)
         {
             //Debug.Log(destinationSet);
             Agent.SetDestination(WalkPoint);
-            destinationSet = true;
+            
         }
 
 
@@ -61,12 +65,15 @@ public class MouseScript : MonoBehaviour
         if (Distance2WalkPoint.magnitude < 1)
         {
             WalkPointSet = false;
-            destinationSet = false;
+            
         }
     }
     
     private void SearchWalkPoint()
     {
+        timeSinceLastDecision = 0;
+
+
         float RandomZ = Random.Range(-WalkPointRange, WalkPointRange);
         float RandomX = Random.Range(-WalkPointRange, WalkPointRange);
 
