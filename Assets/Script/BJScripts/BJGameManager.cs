@@ -138,7 +138,7 @@ public class BJGameManager : MonoBehaviour
             hideCard.GetComponent<Renderer>().enabled = false;
             standClicks = 0;
         }
-        if (wins >= 10 || losses >= 10)
+        if (wins >= 10 || losses >= 3)
         {
             BJNPC.GetComponent<BlackJackStarter>().BlackJackEnd();
         }
