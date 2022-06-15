@@ -716,8 +716,8 @@ PlayerSettings:
   apiCompatibilityLevelPerPlatform: {}
   m_RenderingPath: 3
   m_MobileRenderingPath: 1
-  metroPackageName: Skyshop Project 1
-  metroPackageVersion: 
+  metroPackageName: SkyshopProject1
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -725,7 +725,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: Skyshop Project 1
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: "ProjectF\u0131nal"
   metroTileShowName: 1
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
