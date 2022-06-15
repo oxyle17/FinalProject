@@ -1227,7 +1227,6 @@ GameObject:
   - component: {fileID: 21779452}
   - component: {fileID: 21779451}
   - component: {fileID: 21779450}
-  - component: {fileID: 21779449}
   - component: {fileID: 21779448}
   m_Layer: 0
   m_Name: PickUpCube (1)
@@ -1266,19 +1265,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &21779449
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 21779446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf6bf3ffe3fc264ea4dfd285a21676c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: {fileID: 0}
 --- !u!114 &21779450
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3072,7 +3058,7 @@ Transform:
   - {fileID: 1839455307}
   - {fileID: 1689334161}
   m_Father: {fileID: 0}
-  m_RootOrder: 25
+  m_RootOrder: 24
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &50149055
 PrefabInstance:
@@ -3513,6 +3499,7 @@ Transform:
   - {fileID: 168242649}
   - {fileID: 598057178}
   - {fileID: 1160619372}
+  - {fileID: 260150814}
   m_Father: {fileID: 758622919}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
@@ -14188,12 +14175,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 260150808}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 19642.85, y: 540.03, z: -13164.17}
-  m_LocalScale: {x: 5.128263, y: 4.3786397, z: 6.4129558}
+  m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: -0.034505434, y: 0.21937892, z: -0.38423514}
+  m_LocalScale: {x: 2.5511775, y: 1.8648453, z: 2.9323776}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 18
+  m_Father: {fileID: 58488356}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &261331181
 PrefabInstance:
@@ -17441,8 +17428,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -17478,7 +17465,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &322972105
 BoxCollider:
@@ -18563,7 +18550,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 23
+  m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: -179.119, z: 0}
 --- !u!4 &344315024 stripped
 Transform:
@@ -26574,8 +26561,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -26611,7 +26598,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &524569898
 BoxCollider:
@@ -32837,7 +32824,7 @@ Transform:
   m_LocalScale: {x: 4.099274, y: 6.896599, z: 4.6574864}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 19
+  m_RootOrder: 18
   m_LocalEulerAnglesHint: {x: 0, y: 12.606, z: 0}
 --- !u!1001 &660719941
 PrefabInstance:
@@ -43518,7 +43505,6 @@ GameObject:
   - component: {fileID: 869430221}
   - component: {fileID: 869430220}
   - component: {fileID: 869430219}
-  - component: {fileID: 869430218}
   - component: {fileID: 869430217}
   m_Layer: 0
   m_Name: PickUpCube (2)
@@ -43557,19 +43543,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &869430218
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 869430215}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7cf6bf3ffe3fc264ea4dfd285a21676c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  a: {fileID: 0}
 --- !u!114 &869430219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -44286,7 +44259,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 878927488}
   m_LocalRotation: {x: -0, y: 0.7368257, z: -0, w: 0.67608285}
-  m_LocalPosition: {x: 19348.81, y: 531.39, z: -13189.83}
+  m_LocalPosition: {x: 19348.31, y: 531.59, z: -13190.21}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 341568202}
@@ -46046,7 +46019,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 21
+  m_RootOrder: 20
   m_LocalEulerAnglesHint: {x: 0, y: 14.586, z: 0}
 --- !u!4 &913516966 stripped
 Transform:
@@ -54288,8 +54261,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -54325,7 +54298,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1089214296
 BoxCollider:
@@ -56374,11 +56347,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1134407351}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -478.44, y: -268.73, z: -10.34}
+  m_LocalPosition: {x: -305, y: -216.9, z: -10.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 26
+  m_RootOrder: 25
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1136429932
 GameObject:
@@ -60604,7 +60577,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!224 &1236388688
 RectTransform:
@@ -60629,7 +60602,7 @@ RectTransform:
   - {fileID: 21278867}
   - {fileID: 1035777269}
   m_Father: {fileID: 0}
-  m_RootOrder: 27
+  m_RootOrder: 26
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -61494,7 +61467,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4804739969713882, guid: 2ca42f0c2027e5f439b3914288d6aa88, type: 3}
       propertyPath: m_RootOrder
-      value: 24
+      value: 23
       objectReference: {fileID: 0}
     - target: {fileID: 4804739969713882, guid: 2ca42f0c2027e5f439b3914288d6aa88, type: 3}
       propertyPath: m_LocalScale.x
@@ -63398,8 +63371,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -63435,7 +63408,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1290638486
 BoxCollider:
@@ -64632,8 +64605,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -64669,7 +64642,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1312939390
 BoxCollider:
@@ -70830,7 +70803,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 20
+  m_RootOrder: 19
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1446664885
 GameObject:
@@ -72900,8 +72873,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 285.47
   m_StoppingDistance: 0
@@ -72937,7 +72910,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1503762816
 BoxCollider:
@@ -73895,8 +73868,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -73932,7 +73905,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1521129025
 BoxCollider:
@@ -77454,7 +77427,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 28
+  m_RootOrder: 27
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1577159452 stripped
 Transform:
@@ -79833,7 +79806,7 @@ RectTransform:
   m_Children:
   - {fileID: 1257422363}
   m_Father: {fileID: 0}
-  m_RootOrder: 22
+  m_RootOrder: 21
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -80362,7 +80335,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: fc2e738152c89824b9ba15683ecb6a41, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -82392,8 +82365,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -82429,7 +82402,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1701003910
 BoxCollider:
@@ -87730,8 +87703,8 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 23.2
-  m_Acceleration: 70.4
+  m_Speed: 15
+  m_Acceleration: 50
   avoidancePriority: 50
   m_AngularSpeed: 133.38
   m_StoppingDistance: 0
@@ -87767,7 +87740,7 @@ MonoBehaviour:
   minWalkPointRange: 7
   WalkPointRange: 10
   animator: {fileID: 0}
-  decisionInterval: 2
+  decisionInterval: 0.1
   timeSinceLastDecision: 1
 --- !u!65 &1813446206
 BoxCollider:

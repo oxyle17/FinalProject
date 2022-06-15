@@ -38,13 +38,16 @@ public class WomanTrigger2 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+
         womanSound.Play();
         woman2.enabled = true;
 
 
         Invoke(nameof(marko), 12);
 
-
+        
 
     }
 

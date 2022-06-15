@@ -27,6 +27,8 @@ public class WomanTrigger1 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+
+
         ws1.Play();
         w1.enabled = true;
         questionMark.enabled = true;
@@ -36,6 +38,10 @@ public class WomanTrigger1 : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         questionMark.enabled = false;
+
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+
+
     }
 
 

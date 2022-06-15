@@ -8,9 +8,19 @@ public class Quest1Start : MonoBehaviour
     [SerializeField] NavMeshAgent agent;
     [SerializeField] GameObject house;
     public Vector3 houseTrans;
+
+    
+
+
+
+
+
     // Start is called before the first frame update
     void Start()
     {
+        
+
+
         
     }
 
@@ -25,6 +35,10 @@ public class Quest1Start : MonoBehaviour
 
     public void Run2House()
     {
+
+       
+
+
         houseTrans = house.transform.position;
         Debug.Log("RunHouse");
         agent.SetDestination(houseTrans);
