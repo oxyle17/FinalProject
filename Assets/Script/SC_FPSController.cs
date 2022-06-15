@@ -27,6 +27,8 @@ public class SC_FPSController : MonoBehaviour
 
     void Start()
     {
+
+        Debug.Log("PlayerController");
         characterController = GetComponent<CharacterController>();
 
         // Lock cursor

@@ -10,6 +10,9 @@ public class WomanTrigger2 : MonoBehaviour
 
     void Start()
     {
+
+
+        Debug.Log("WomanTrigger2");
         mark.enabled = false;
         woman2.enabled = false;
 

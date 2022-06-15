@@ -10,7 +10,7 @@ public class Pickup : MonoBehaviour
 
     private void Start()
     {
-
+        Debug.Log("Pickup");
         Cursor.lockState = CursorLockMode.Locked;
 
     }

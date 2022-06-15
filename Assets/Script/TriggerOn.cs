@@ -15,8 +15,8 @@ public class TriggerOn : MonoBehaviour
     void Start()
     {
 
+        Debug.Log("TriggerOn");
 
-      
         Text.enabled = false;
         sound = GetComponent<AudioSource>();
         

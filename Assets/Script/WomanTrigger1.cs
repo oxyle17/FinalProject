@@ -10,8 +10,15 @@ public class WomanTrigger1 : MonoBehaviour
 
     void Start()
     {
-        questionMark.enabled = false;
-        w1.enabled = false;
+
+        Debug.Log("WomanTrigger1");
+
+        //questionMark.enabled = false;
+       // w1.enabled = false;
+
+
+        Debug.Log("WomanTrigger1Done");
+
     }
 
     // Update is called once per frame
@@ -19,6 +26,7 @@ public class WomanTrigger1 : MonoBehaviour
     {
         if (ws1.isPlaying == false)
         {
+
 
             w1.enabled = false;
         }

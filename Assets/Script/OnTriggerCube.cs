@@ -7,7 +7,7 @@ public class OnTriggerCube : MonoBehaviour
     [SerializeField] GameObject a;
     void Start()
     {
-
+        Debug.Log("OntriggerCube");
         a.SetActive(false);
 
     }

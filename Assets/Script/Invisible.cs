@@ -13,7 +13,7 @@ public class Invisible : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        Debug.Log("Invisible");
         textC1.enabled = false;
         textC2.enabled = false;
 

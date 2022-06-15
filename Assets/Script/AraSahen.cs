@@ -23,6 +23,9 @@ public class AraSahen : MonoBehaviour
     
     void Start()
     {
+
+
+        Debug.Log("AraSahen");
         Women.GetComponent<MeshRenderer>().enabled = false;
         instance = this;
 

@@ -60,6 +60,9 @@ public class PlayerInteract : MonoBehaviour
 
     void Start()
     {
+
+        Debug.Log("PlayerInteract");
+
         _done = true;  // Kaan
 
         InvokeRepeating(nameof(checkMice), 1, 1);   // Kaan

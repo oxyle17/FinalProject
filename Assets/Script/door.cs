@@ -15,7 +15,7 @@ public class door : MonoBehaviour
 
     void Start()
     {
-
+        Debug.Log("Door");
 
         closePos = transform.position;
 

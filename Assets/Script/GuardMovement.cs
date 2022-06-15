@@ -27,6 +27,9 @@ public class GuardMovement : MonoBehaviour
 
     void Start()
     {
+
+        Debug.Log("GuardMovement");
+
         TutorialCanvas.enabled = false;
 
         VisaUI.enabled = false;

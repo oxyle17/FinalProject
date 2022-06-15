@@ -11,6 +11,8 @@ public class Quest1Fin : MonoBehaviour
     [SerializeField] GameObject RB1;
     void Start()
     {
+        Debug.Log("QuetFind1");
+
         Player = GameObject.Find("PlayerObject");
         TeleDes = GameObject.Find("Quest1NPCDesination");
         RB1 = GameObject.Find("RoadBlock1");

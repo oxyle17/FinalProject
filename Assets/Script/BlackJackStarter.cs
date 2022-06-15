@@ -16,6 +16,7 @@ public class BlackJackStarter : MonoBehaviour
     void Start()
     {
         Player = GameObject.Find("PlayerObject");
+        Debug.Log("BlackJack");
     }
 
     // Update is called once per frame

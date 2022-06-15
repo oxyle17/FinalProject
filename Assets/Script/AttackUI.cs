@@ -13,8 +13,8 @@ public class AttackUI : MonoBehaviour
     void Start()
     {
         idle.enabled = true;
-     
 
+        Debug.Log("AtackUI");
 
     }
 

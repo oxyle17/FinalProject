@@ -32,6 +32,7 @@ public class MouseScript : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("MouseScript");
         Agent = GetComponent<NavMeshAgent>();
     }
 

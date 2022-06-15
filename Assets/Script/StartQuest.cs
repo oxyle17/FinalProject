@@ -13,7 +13,7 @@ public class StartQuest : MonoBehaviour
 
     void Start()
     {
-
+        Debug.Log("StartQuest1");
         a1.enabled = false;
 
     }
