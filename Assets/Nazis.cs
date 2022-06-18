@@ -115,11 +115,11 @@ public class Nazis : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        //m1();
-        //Invoke(nameof(n1), 25);
-       // Invoke(nameof(m3), 31);
-       // Invoke(nameof(playSound), 57);
-        Invoke(nameof(hareket), 1);
+         m1();
+        Invoke(nameof(n1), 22);
+        Invoke(nameof(m3), 27);
+        Invoke(nameof(playSound), 53);
+        Invoke(nameof(hareket), 56);
 
 
 

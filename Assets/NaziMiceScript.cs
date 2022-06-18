@@ -37,7 +37,7 @@ public class NaziMiceScript : MonoBehaviour
 
            
         NaziMice.SetDestination(NaziDest.transform.position);
-        
+        Debug.Log(gameObject.transform.position);
         
         
 
