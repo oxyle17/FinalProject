@@ -6,21 +6,34 @@ using UnityEngine.AI;
 
 public class NaziMiceScript : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static NaziMiceScript instance;
+
 
     [SerializeField] NavMeshAgent NaziMice;
     [SerializeField] GameObject NaziDest;
     void Start()
     {
+        instance = this;
         NaziMice = GetComponent<NavMeshAgent>();
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            NaziMice.SetDestination(NaziDest.transform.position);
-        }
+       
     }
+
+
+    public void MicetoExit()
+    {
+
+
+        NaziMice.SetDestination(NaziDest.transform.position);
+
+
+
+    }
+
+
 }

@@ -107,10 +107,9 @@ public class Nazis : MonoBehaviour
 
         m1();
         Invoke(nameof(n1), 25);
-        Invoke(nameof(m2), 32);
-        Invoke(nameof(m3), 61);
-       
-
+        Invoke(nameof(m3), 31);
+        Invoke(nameof(playSound), 57);
+        Invoke(nameof(hareket), 58);
 
 
 
@@ -119,8 +118,20 @@ public class Nazis : MonoBehaviour
 
 
 
+    void playSound()
+    {
+
+        naziSound4.Play();
 
 
+    }
 
+    void hareket()
+    {
+
+        NaziMiceScript.instance.MicetoExit();
+
+
+    }
 
 }
