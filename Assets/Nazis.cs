@@ -6,7 +6,7 @@ public class Nazis : MonoBehaviour
 {
 
     public static Nazis instance;
-    public GameObject[] enemies;
+    //public GameObject[] enemies;
    
 
     [SerializeField] Canvas naziCanvas1;
@@ -138,16 +138,16 @@ public class Nazis : MonoBehaviour
 
     void hareket()
     {
-        foreach (GameObject enemy in enemies)
+        NaziMiceScript[] enemies = FindObjectsOfType<NaziMiceScript>();
+
+        foreach (NaziMiceScript enemy in enemies)
         {
-          
-          
+            enemy.MicetoExit();
 
         }
 
 
-        NaziMiceScript.instance.anan = true;
-        NaziMiceScript.instance.MicetoExit();
+
 
 
     }

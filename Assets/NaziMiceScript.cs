@@ -32,12 +32,12 @@ public class NaziMiceScript : MonoBehaviour
     //aaaaaaaaaaaaaaaaaaaaaaa fuck
     public void MicetoExit()
     {
-        if (anan == true)
-        {
+        
+        
 
            
-            NaziMice.SetDestination(NaziDest.transform.position);
-        }
+        NaziMice.SetDestination(NaziDest.transform.position);
+        
         
         
 
