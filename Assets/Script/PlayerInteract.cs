@@ -6,7 +6,8 @@ using UnityEngine;
 public class PlayerInteract : MonoBehaviour
 {
 
-   
+
+    public GameObject duvar;
 
 
     public static PlayerInteract instance;
@@ -16,6 +17,8 @@ public class PlayerInteract : MonoBehaviour
 
     public Transform changeTo;
     public bool AllMiceCollect = false;
+    public float checkMices;
+    public float checkMices2;
 
     // Fade Out - In     -Kaan
 
@@ -139,6 +142,9 @@ public class PlayerInteract : MonoBehaviour
         {
             AraSahen.instance.quest1Music.Stop();
 
+            
+
+
             AraSahen.instance.Sahne1();
 
 
@@ -157,17 +163,43 @@ public class PlayerInteract : MonoBehaviour
 
         if (mice == 9)
         {
+            checkMices++;
+
+            if (checkMices == 1)
+            {
+              AraSahen.instance.AnlaticiTalk1();
+            }
+            
+            
+           
+
+        }
+
+
+        if (mice == 10)
+        {
+            checkMices2++;
+
+            if (checkMices2 == 1)
+            {
+               AraSahen.instance.AnlaticiTalk2();
+            }
+            
+
+        }
+
+
+
+        if (mice == 14)
+        {
+
             checkFloat++;
-                
-
-
-
             AllMiceCollect = true;
-
             if (checkFloat == 1)
             {
 
-              AraSahne1();
+                AraSahne1();
+
             }
             if (checkFloat > 1)
             {
@@ -175,7 +207,9 @@ public class PlayerInteract : MonoBehaviour
                 CancelInvoke(nameof(checkMice));
 
             }
-           
+
+
+
 
 
         }

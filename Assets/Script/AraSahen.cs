@@ -5,18 +5,23 @@ using UnityEngine;
 public class AraSahen : MonoBehaviour
 {
     public static AraSahen instance;
-    public GameObject Women;
-    public Transform changeTo;
-    public Transform changeTo2;
+  
+
+
+    [SerializeField] AudioSource fareA1;
+    [SerializeField] AudioSource fareA2;
+    [SerializeField] AudioSource fareA3;
+    [SerializeField] AudioSource fareA4;
+
+    [SerializeField] Canvas FareAC1;
+    [SerializeField] Canvas FareAC2;
+    [SerializeField] Canvas FareAC3;
+    [SerializeField] Canvas FareAC4;
 
     public AudioSource quest1Music;
     public GameObject Player;
 
-    [SerializeField] Canvas women1;
-    [SerializeField] Canvas women2;
-
-    [SerializeField] AudioSource ws1;
-    [SerializeField] AudioSource ws2;
+   
 
    
 
@@ -26,12 +31,13 @@ public class AraSahen : MonoBehaviour
 
 
         Debug.Log("AraSahen");
-        Women.GetComponent<MeshRenderer>().enabled = false;
+       
         instance = this;
 
-        women1.enabled = false;
-        women2.enabled = false;
-
+        FareAC1.enabled = false;
+        FareAC2.enabled = false;
+        FareAC3.enabled = false;
+        FareAC4.enabled = false;
     }
 
     // Update is called once per frame
@@ -39,17 +45,30 @@ public class AraSahen : MonoBehaviour
     {
 
 
-        if (ws1.isPlaying == false)
+        if (fareA1.isPlaying == false)
         {
 
-            women1.enabled = false;
+            FareAC1.enabled = false;
 
         }
 
-        if (ws2.isPlaying == false)
+        if (fareA2.isPlaying == false)
         {
 
-            women2.enabled = false;
+            FareAC2.enabled = false;
+        }
+
+        if (fareA3.isPlaying == false)
+        {
+
+
+            FareAC3.enabled = false;      
+        }
+        if (fareA4.isPlaying == false)
+        {
+
+            FareAC4.enabled = false;
+
         }
 
 
@@ -73,18 +92,13 @@ public class AraSahen : MonoBehaviour
     public void Sahne1()
     {
 
-        FadeIn();
+        PlayerInteract.instance.duvar.GetComponent<MeshRenderer>().enabled = false;
 
-        Invoke(nameof(TransformPlayer), 2);
+        AnlaticiTalk3();
 
+        Invoke(nameof(AnlaticiTalk4), 18);
 
-
-
-        Invoke(nameof(fadeOut), 3);
-
-        Invoke(nameof(womenActive), 3);
-
-        Invoke(nameof(sahne2), 6);
+        Invoke(nameof(destroyWall), 19);
 
 
 
@@ -103,66 +117,43 @@ public class AraSahen : MonoBehaviour
 
     }
 
-    public void TransformPlayer()
+
+    public void destroyWall()
     {
 
-        Player.transform.position = changeTo.position;
-
-    }
-
-    public void TransformPlayer2()
-    {
-
-        Player.transform.position = changeTo2.position;
-
-    }
-
-    public void womenActive()
-    {
-
-        Women.GetComponent<MeshRenderer>().enabled = true;
-
+        Destroy(PlayerInteract.instance.duvar);
 
     }
 
 
-    public void sahne2()
+    public void AnlaticiTalk1()
     {
-
-        womenTalk1();
-
-        Invoke(nameof(womenTalk2), 14);
-
-        Invoke(nameof(FadeIn), 33);
-
-        Invoke(nameof(getOut), 35);
-
-
-    }
-
-    void womenTalk1()
-    {
-        women1.enabled = true;
-        ws1.Play();
+        FareAC1.enabled = true;
+       fareA1.Play();
 
 
 
     }
-    void womenTalk2()
+    public void AnlaticiTalk2()
     {
-        women2.enabled = true;
-        ws2.Play();
+        FareAC2.enabled = true;
+        fareA2.Play();
 
     }
 
-    void getOut()
+   public void AnlaticiTalk3()
     {
-
-        TransformPlayer2();
-        Invoke(nameof(fadeOut), 1);
-
-
+        FareAC3.enabled = true;
+        fareA3.Play();
 
     }
+
+    public void AnlaticiTalk4()
+    {
+        FareAC4.enabled = true;
+        fareA4.Play();
+
+    }
+
 
 }
