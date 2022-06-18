@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class Nazis : MonoBehaviour
 {
+
+    public static Nazis instance;
+    public GameObject[] enemies;
+   
+
     [SerializeField] Canvas naziCanvas1;
     [SerializeField] Canvas naziCanvas2;
     [SerializeField] Canvas naziCanvas3;
@@ -16,13 +21,18 @@ public class Nazis : MonoBehaviour
     [SerializeField] Canvas narratorCanvas1;
     [SerializeField] AudioSource narratorSound1;
 
+
+
     void Start()
     {
+        instance = this;
 
         naziCanvas1.enabled = false;
         naziCanvas2.enabled = false;
         naziCanvas3.enabled = false;
         narratorCanvas1.enabled = false;
+
+      
 
 
     }
@@ -105,11 +115,11 @@ public class Nazis : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        m1();
-        Invoke(nameof(n1), 25);
-        Invoke(nameof(m3), 31);
-        Invoke(nameof(playSound), 57);
-        Invoke(nameof(hareket), 58);
+        //m1();
+        //Invoke(nameof(n1), 25);
+       // Invoke(nameof(m3), 31);
+       // Invoke(nameof(playSound), 57);
+        Invoke(nameof(hareket), 1);
 
 
 
@@ -128,7 +138,15 @@ public class Nazis : MonoBehaviour
 
     void hareket()
     {
+        foreach (GameObject enemy in enemies)
+        {
+          
+          
 
+        }
+
+
+        NaziMiceScript.instance.anan = true;
         NaziMiceScript.instance.MicetoExit();
 
 

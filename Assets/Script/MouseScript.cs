@@ -54,8 +54,11 @@ public class MouseScript : MonoBehaviour
 
         if (WalkPointSet)
         {
-            //Debug.Log(destinationSet);
+
+
+            
             Agent.SetDestination(WalkPoint);
+
             
         }
 

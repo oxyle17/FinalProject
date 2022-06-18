@@ -5,6 +5,7 @@ using UnityEngine;
 public class MiceofNazi : MonoBehaviour
 {
 
+    public static MiceofNazi instance;
 
     [SerializeField] AudioSource nms1;
     [SerializeField] Canvas nmc1;
@@ -16,7 +17,7 @@ public class MiceofNazi : MonoBehaviour
 
     void Start()
     {
-
+        instance = this;
         nmc1.enabled = false;
         nc1.enabled = false;
 
