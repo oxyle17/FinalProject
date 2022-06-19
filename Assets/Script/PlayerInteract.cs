@@ -9,6 +9,7 @@ public class PlayerInteract : MonoBehaviour
 
     public GameObject duvar;
 
+    public LayerMask bes;
 
     public static PlayerInteract instance;
     public float checkFloat;
@@ -83,7 +84,9 @@ public class PlayerInteract : MonoBehaviour
 
         Debug.DrawRay(transform.position, transform.forward * distance2See, Color.magenta);
 
-        if (Physics.Raycast(transform.position, transform.forward, out WhatHit, distance2See))
+        Ray rey = new Ray(transform.position, transform.forward);
+
+        if (Physics.Raycast(transform.position, transform.forward, out WhatHit, distance2See, bes, QueryTriggerInteraction.Ignore))
         {
 
             Debug.Log(WhatHit.collider.gameObject.name);
@@ -92,9 +95,10 @@ public class PlayerInteract : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.E))
         {
-
-           
-
+            if (WhatHit.collider == null)
+            {
+                return;
+            }
             if (WhatHit.collider.gameObject.GetComponent<IneractionDome>() != null)
             {
                 interactTypes Interacted;
@@ -104,7 +108,7 @@ public class PlayerInteract : MonoBehaviour
                 switch (Interacted)
                 {
                     case interactTypes.pickup:
-
+                        InteractedGameObject.GetComponent<Pickup>().PickingUp();
                         break;
                     case interactTypes.destroy:
                         Destroy(InteractedGameObject);
@@ -124,6 +128,12 @@ public class PlayerInteract : MonoBehaviour
                         break;
                     case interactTypes.quest2Start:
                         InteractedGameObject.GetComponent<BlackJackStarter>().BlackJackStart();
+                        break;
+                    case interactTypes.visaGuard:
+                        if (!WhatHit.collider.isTrigger && InteractedGameObject.GetComponent<GuardMovement>() != null)
+                        {
+                            InteractedGameObject.GetComponent<GuardMovement>().pass();
+                        }
                         break;
                 }
 

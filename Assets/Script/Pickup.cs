@@ -14,21 +14,45 @@ public class Pickup : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
-    void OnMouseDown()
+
+    private void Update()
+    {
+        if (Input.GetKeyUp(KeyCode.E))
+        {
+            PuttingDown();
+        }
+    }
+
+    public void PickingUp()
     {
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
-        this.transform.position = theDest.position;
-        this.transform.parent = GameObject.Find("Destination").transform;
+        transform.position = theDest.position;
+        transform.parent = GameObject.Find("Destination").transform;
     }
 
-
-    private void OnMouseUp()
+    public void PuttingDown()
     {
         this.transform.parent = null;
         GetComponent<Rigidbody>().useGravity = true;
         GetComponent<BoxCollider>().enabled = true;
     }
+
+    //void OnMouseDown()
+    //{
+    //    GetComponent<BoxCollider>().enabled = false;
+    //    GetComponent<Rigidbody>().useGravity = false;
+    //    this.transform.position = theDest.position;
+    //    this.transform.parent = GameObject.Find("Destination").transform;
+    //}
+
+    //private void OnMouseUp()
+    //{
+    //    this.transform.parent = null;
+    //    GetComponent<Rigidbody>().useGravity = true;
+    //    GetComponent<BoxCollider>().enabled = true;
+    //}
+
 
 
 }

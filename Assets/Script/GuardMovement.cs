@@ -67,13 +67,6 @@ public class GuardMovement : MonoBehaviour
             N1.enabled = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            TutorialCanvas.enabled = false;
-            pass();
-
-        }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -157,6 +150,7 @@ public class GuardMovement : MonoBehaviour
     {
 
 
+        TutorialCanvas.enabled = false;
 
         VisaUI.enabled = false;
         currentUI.enabled = true;
