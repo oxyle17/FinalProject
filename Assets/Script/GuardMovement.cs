@@ -74,6 +74,9 @@ public class GuardMovement : MonoBehaviour
 
         g1();
         Invoke(nameof(nar), 5);
+
+        Invoke(nameof(haha), 15);
+
         Invoke(nameof(UIchange), 15);
 
         
@@ -149,6 +152,7 @@ public class GuardMovement : MonoBehaviour
     public void pass()
     {
 
+        haha();
 
         TutorialCanvas.enabled = false;
 
@@ -164,5 +168,15 @@ public class GuardMovement : MonoBehaviour
 
 
     }
+
+
+   public void haha()
+    {
+
+        Efectt.instance.openSmoke();
+
+
+    }
+
 
 }

@@ -33,6 +33,8 @@ public class door : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+        Debug.Log(gameObject.transform.position);
+
         isOpening = true;
         isClosing = false;
     }

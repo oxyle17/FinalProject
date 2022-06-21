@@ -5,8 +5,8 @@ using UnityEngine;
 public class AraSahen : MonoBehaviour
 {
     public static AraSahen instance;
-  
 
+    public ParticleSystem doorVFX;
 
     [SerializeField] AudioSource fareA1;
     [SerializeField] AudioSource fareA2;
@@ -91,8 +91,11 @@ public class AraSahen : MonoBehaviour
 
     public void Sahne1()
     {
-
+        doorDestroy();
         PlayerInteract.instance.duvar.GetComponent<MeshRenderer>().enabled = false;
+
+
+
 
         AnlaticiTalk3();
 
@@ -152,6 +155,25 @@ public class AraSahen : MonoBehaviour
     {
         FareAC4.enabled = true;
         fareA4.Play();
+
+    }
+
+
+
+    public void doorDestroy()
+    {
+
+
+        doorVFX.Play();
+
+        var clonedoorVFX = Instantiate(doorVFX, PlayerInteract.instance.duvar.transform.position, Quaternion.identity);
+        print(clonedoorVFX);
+
+        doorVFX.Play();
+
+
+
+
 
     }
 

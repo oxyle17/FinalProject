@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
-
+ 
 
     public GameObject duvar;
 
@@ -131,6 +131,21 @@ public class PlayerInteract : MonoBehaviour
                         InteractedGameObject.GetComponent<Quest1Start>().Run2House();
                         break;
                     case interactTypes.mice:
+
+                        void StartVfx()
+                        {
+
+                            SesKaynak.instance.miceVFX.Play();
+                            var cloneMiceVFX = Instantiate(SesKaynak.instance.miceVFX, InteractedGameObject.transform.position, Quaternion.identity);
+                            print(cloneMiceVFX);
+
+                            SesKaynak.instance.miceVFX.Play();
+                        }
+
+
+
+                        StartVfx();
+                        SesKaynak.instance.Anan1();
                         Destroy(InteractedGameObject);
                         mice++;
                         break;
@@ -166,7 +181,10 @@ public class PlayerInteract : MonoBehaviour
     }
 
 
-   
+
+    
+
+
     public void AraSahne1()
     {
 
