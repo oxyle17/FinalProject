@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
@@ -15,6 +16,7 @@ public class PlayerInteract : MonoBehaviour
     public float checkFloat;
     public float distance2See = 1;
     RaycastHit WhatHit;
+    [SerializeField] GameObject ActiveCrosshair;
 
     public Transform changeTo;
     public bool AllMiceCollect = false;
@@ -91,6 +93,18 @@ public class PlayerInteract : MonoBehaviour
 
             Debug.Log(WhatHit.collider.gameObject.name);
 
+        }
+        if (WhatHit.collider == null)
+        {
+            ActiveCrosshair.GetComponent<Image>().enabled = false;
+        }
+        else if (WhatHit.collider.gameObject.GetComponent<IneractionDome>() == null)
+        {
+            ActiveCrosshair.GetComponent<Image>().enabled = false;
+        }
+        else if (WhatHit.collider.gameObject.GetComponent<IneractionDome>() != null)
+        {
+            ActiveCrosshair.GetComponent<Image>().enabled = true;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
