@@ -26,12 +26,15 @@ public class MouseScript : MonoBehaviour
 
 
 
-
+        // 19746 484 -13203
 
     }
 
     void Start()
     {
+
+       
+
         Debug.Log("MouseScript");
         Agent = GetComponent<NavMeshAgent>();
     }
@@ -39,7 +42,7 @@ public class MouseScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
         Idle();
         
 

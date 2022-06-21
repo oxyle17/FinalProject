@@ -75,4 +75,14 @@ public class MiceofNazi : MonoBehaviour
     }
 
 
+
+    private void OnTriggerExit(Collider other)
+    {
+
+        Destroy(this);
+
+
+    }
+
+
 }

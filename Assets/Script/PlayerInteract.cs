@@ -135,6 +135,14 @@ public class PlayerInteract : MonoBehaviour
                             InteractedGameObject.GetComponent<GuardMovement>().pass();
                         }
                         break;
+
+                    case interactTypes.bombButton:
+
+                        InteractedGameObject.GetComponent<BombButton>().bombaciMülayim();
+
+                            break;
+
+
                 }
 
 
@@ -177,7 +185,7 @@ public class PlayerInteract : MonoBehaviour
 
             if (checkMices == 1)
             {
-              AraSahen.instance.AnlaticiTalk1();
+              
             }
             
             

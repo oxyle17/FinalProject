@@ -21,6 +21,13 @@ public class Nazis : MonoBehaviour
     [SerializeField] Canvas narratorCanvas1;
     [SerializeField] AudioSource narratorSound1;
 
+    [SerializeField] Canvas narratorCanvas2;
+    [SerializeField] AudioSource narratorSound2;
+
+
+    [SerializeField] GameObject barrier;
+
+
 
 
     void Start()
@@ -32,7 +39,7 @@ public class Nazis : MonoBehaviour
         naziCanvas3.enabled = false;
         narratorCanvas1.enabled = false;
 
-      
+        narratorCanvas2.enabled = false;
 
 
     }
@@ -67,6 +74,12 @@ public class Nazis : MonoBehaviour
 
         }
 
+        if (narratorSound2.isPlaying == false)
+        {
+
+            narratorCanvas2.enabled = false;
+
+        }
 
 
 
@@ -110,6 +123,17 @@ public class Nazis : MonoBehaviour
     }
 
 
+    void n2()
+    {
+
+
+        narratorSound2.Play();
+        narratorCanvas2.enabled = true;
+
+
+    }
+
+
 
 
     private void OnTriggerEnter(Collider other)
@@ -118,9 +142,10 @@ public class Nazis : MonoBehaviour
         m1();
         Invoke(nameof(n1), 22);
         Invoke(nameof(m3), 27);
-        Invoke(nameof(playSound), 53);
-        Invoke(nameof(hareket), 56);
+        Invoke(nameof(hareket), 53);
+        Invoke(nameof(n2), 53);
 
+        Invoke(nameof(openBarrier), 63);
 
 
 
@@ -151,5 +176,26 @@ public class Nazis : MonoBehaviour
 
 
     }
+
+    void openBarrier()
+    {
+
+
+        Destroy(barrier);
+
+
+
+    }
+
+
+    private void OnTriggerExit(Collider other)
+    {
+
+
+        Destroy(this);
+
+    }
+
+
 
 }
