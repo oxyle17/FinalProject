@@ -128,7 +128,9 @@ public class PlayerInteract : MonoBehaviour
                         Destroy(InteractedGameObject);
                         break;
                     case interactTypes.quest1Start:
+
                         InteractedGameObject.GetComponent<Quest1Start>().Run2House();
+                        WomanTrigger2.instance.isAcceptQuest = true;
                         break;
                     case interactTypes.mice:
 

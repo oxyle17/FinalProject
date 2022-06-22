@@ -20,7 +20,7 @@ public class StartQuest : MonoBehaviour
 
    
 
-
+    
     void Update()
     {
 
@@ -43,10 +43,16 @@ public class StartQuest : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
+            if (WomanTrigger2.instance.isAcceptQuest == true)
+            {
 
-            other.transform.position = changeTo.position;
 
-            a1.enabled = true;
+                 other.transform.position = changeTo.position;
+
+                  a1.enabled = true;
+            }
+
+           
            
 
 

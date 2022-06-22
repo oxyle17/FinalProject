@@ -43,10 +43,15 @@ public class TriggerOn : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-
-        
-        sound.Play();
+        if (other.CompareTag("Player"))
+        {
+ sound.Play();
         Text.enabled = true;
+
+
+        }
+        
+       
        
       
 
@@ -56,7 +61,18 @@ public class TriggerOn : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        Destroy(this);
+
+        if (other.CompareTag("Player"))
+        {
+             
+            Destroy(this);
+
+        }
+
+
+     
+
+
     }
 
 

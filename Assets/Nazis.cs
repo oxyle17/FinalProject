@@ -27,7 +27,7 @@ public class Nazis : MonoBehaviour
 
     [SerializeField] GameObject barrier;
 
-
+    public bool Okay = false;
 
 
     void Start()
@@ -145,9 +145,9 @@ public class Nazis : MonoBehaviour
         Invoke(nameof(hareket), 53);
         Invoke(nameof(n2), 53);
 
-        Invoke(nameof(openBarrier), 63);
+        Invoke(nameof(openBarrier), 57);
 
-
+        Okay = true;
 
     }
 

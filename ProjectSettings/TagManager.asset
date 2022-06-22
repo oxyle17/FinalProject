@@ -11,6 +11,9 @@ TagManager:
   - NPC
   - SpeedUp
   - Quest1
+  - FxTemporaire
+  - SlowDown
+  - SpeedUp2
   layers:
   - Default
   - TransparentFX

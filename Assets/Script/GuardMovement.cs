@@ -77,7 +77,7 @@ public class GuardMovement : MonoBehaviour
 
         Invoke(nameof(haha), 15);
 
-        Invoke(nameof(UIchange), 15);
+        Invoke(nameof(UIchange), 15.03f);
 
         
 

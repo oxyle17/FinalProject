@@ -4,12 +4,19 @@ using UnityEngine;
 
 public class WomanTrigger2 : MonoBehaviour
 {
+
+
+    public bool isAcceptQuest = false;
+
+    public static WomanTrigger2 instance;
+
     [SerializeField] Canvas woman2;
     [SerializeField] AudioSource womanSound;
     [SerializeField] Canvas mark;
 
     void Start()
     {
+        instance = this;
 
 
         Debug.Log("WomanTrigger2");

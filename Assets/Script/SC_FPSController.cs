@@ -48,6 +48,30 @@ public class SC_FPSController : MonoBehaviour
         }
 
 
+        if (other.CompareTag("SlowDown"))
+        {
+
+            walkingSpeed = 2.5f;
+            runningSpeed = 4.0f;
+
+        }
+
+        if (other.CompareTag("SpeedUp2"))
+        {
+
+            if (Nazis.instance.Okay == true)
+            {
+
+
+            walkingSpeed = 5.0f;
+            runningSpeed = 10.0f;
+
+            }
+
+
+
+        }
+
     }
 
 

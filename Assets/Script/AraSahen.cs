@@ -80,9 +80,12 @@ public class AraSahen : MonoBehaviour
 
         if (other.CompareTag("Quest1"))
         {
+            if (WomanTrigger2.instance.isAcceptQuest == true)
+            {
+quest1Music.Play();
+            }
 
-
-            quest1Music.Play();
+            
 
 
         }
