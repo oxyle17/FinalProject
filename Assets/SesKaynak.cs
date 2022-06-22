@@ -10,7 +10,7 @@ public class SesKaynak : MonoBehaviour
 
 
     public ParticleSystem miceVFX;
-    public ParticleSystem doorVFX;
+   
 
 
 
@@ -37,22 +37,7 @@ public class SesKaynak : MonoBehaviour
     }
 
    
-    public void doorDestroy()
-    {
-
-
-        doorVFX.Play();
-
-        var clonedoorVFX = Instantiate(doorVFX, transform.position, Quaternion.identity);
-        print(clonedoorVFX);
-
-        doorVFX.Play();
-
-
-
-
-
-    }
+   
 
 
 
