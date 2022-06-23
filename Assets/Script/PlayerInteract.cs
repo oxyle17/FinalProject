@@ -173,6 +173,21 @@ public class PlayerInteract : MonoBehaviour
 
                             break;
 
+                    case interactTypes.MagicBook:
+
+                       
+
+                         InteractedGameObject.GetComponent<MagicPower>().keepBook();
+
+                      
+
+                      
+
+                     
+
+                        break;
+
+
 
                 }
 

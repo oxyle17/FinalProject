@@ -7,6 +7,8 @@ public class door : MonoBehaviour
 
     //    public int openCount;
 
+    public static door instance;
+
     public Vector3 openPos;
     public Vector3 closePos;
     public bool isOpening = false;
@@ -17,7 +19,7 @@ public class door : MonoBehaviour
     {
         //Debug.Log("Door");
 
-
+        instance = this;
     }
     private void Update()
     {
@@ -31,14 +33,7 @@ public class door : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        Debug.Log(gameObject.transform.position);
-
-        isOpening = true;
-        isClosing = false;
-    }
-
+  
     private void OnTriggerExit(Collider other)
     {
         isClosing = true;
@@ -46,6 +41,17 @@ public class door : MonoBehaviour
     }
 
     
+
+   public void openDoor()
+    {
+
+        Debug.Log(gameObject.transform.position);
+
+        isOpening = true;
+        isClosing = false;
+
+    }
+
 
     //    public void Open()
     //    {

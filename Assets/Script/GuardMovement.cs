@@ -1,10 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+
 
 public class GuardMovement : MonoBehaviour
 {
     Vector3 TargetPos;
+
+
+
 
     [SerializeField] Canvas VisaUI;
     [SerializeField] Canvas currentUI;
@@ -27,6 +32,7 @@ public class GuardMovement : MonoBehaviour
 
     void Start()
     {
+        gameObject.GetComponent<IneractionDome>().enabled = false;
 
         Debug.Log("GuardMovement");
 
@@ -75,7 +81,10 @@ public class GuardMovement : MonoBehaviour
         g1();
         Invoke(nameof(nar), 5);
 
+
         Invoke(nameof(haha), 15);
+        Invoke(nameof(OpenInteract), 15.2f);
+        //* elimizde
 
         Invoke(nameof(UIchange), 15.03f);
 
@@ -86,22 +95,7 @@ public class GuardMovement : MonoBehaviour
 
     }
 
-    public IEnumerator aaa()
-    {
-
-        for (; ; )
-        {
-            yield return new WaitForSeconds(0.1f);
-            transform.position = Vector3.MoveTowards(transform.position, TargetPos, 50 * Time.deltaTime);
-           
-
-
-
-
-        }
-
-
-    }
+  
 
 
     private void OnTriggerExit(Collider other)
@@ -145,7 +139,15 @@ public class GuardMovement : MonoBehaviour
     private void GuardMov()
     {
 
-        StartCoroutine(aaa());
+
+
+
+        door.instance.openDoor();
+        
+
+
+        
+
 
 
     }
@@ -161,7 +163,7 @@ public class GuardMovement : MonoBehaviour
 
 
             g2();
-            Invoke(nameof(GuardMov), 6);
+            Invoke(nameof(GuardMov), 5);
 
 
 
@@ -178,5 +180,14 @@ public class GuardMovement : MonoBehaviour
 
     }
 
+
+      public void OpenInteract()
+    {
+
+
+        gameObject.GetComponent<IneractionDome>().enabled = true;
+
+
+    }
 
 }

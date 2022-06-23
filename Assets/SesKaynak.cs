@@ -15,6 +15,7 @@ public class SesKaynak : MonoBehaviour
 
 
     public static SesKaynak instance;
+
     void Start()
     {
         instance = this;
