@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Animations;
+
 
 public class Quest1Start : MonoBehaviour
 {
@@ -9,7 +11,11 @@ public class Quest1Start : MonoBehaviour
     [SerializeField] GameObject house;
     public Vector3 houseTrans;
 
-    
+
+
+
+    [SerializeField] Animator walk;
+
 
 
 
@@ -29,7 +35,12 @@ public class Quest1Start : MonoBehaviour
     {
         if (transform.position.x == houseTrans.x && transform.position.z == houseTrans.z)
         {
+
             Destroy(gameObject);
+
+
+
+
         }
     }
 
@@ -42,7 +53,15 @@ public class Quest1Start : MonoBehaviour
         houseTrans = house.transform.position;
         Debug.Log("RunHouse");
         agent.SetDestination(houseTrans);
+
+        walk.SetTrigger("walkAnim");
+
+
         gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
 
     }
+
+    
+
+
 }

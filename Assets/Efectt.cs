@@ -24,14 +24,15 @@ public class Efectt : MonoBehaviour
     public void openSmoke()
     {
 
-       
+        smokeSound.Play();
+
 
         smoke.Play();
 
         var cloneCloudVFX = Instantiate(smoke, transform.position, Quaternion.identity);
         print(cloneCloudVFX);
 
-        smokeSound.Play();
+        smoke.Play();
 
     }
 
