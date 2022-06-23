@@ -42,6 +42,7 @@ public class Quest1Start : MonoBehaviour
         houseTrans = house.transform.position;
         Debug.Log("RunHouse");
         agent.SetDestination(houseTrans);
+        gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
 
     }
 }

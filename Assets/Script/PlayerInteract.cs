@@ -102,7 +102,7 @@ public class PlayerInteract : MonoBehaviour
         {
             ActiveCrosshair.GetComponent<Image>().enabled = false;
         }
-        else if (WhatHit.collider.gameObject.GetComponent<IneractionDome>() != null)
+        else if (WhatHit.collider.gameObject.GetComponent<IneractionDome>().InteractXD != interactTypes.numb)
         {
             ActiveCrosshair.GetComponent<Image>().enabled = true;
         }
@@ -174,17 +174,10 @@ public class PlayerInteract : MonoBehaviour
                             break;
 
                     case interactTypes.MagicBook:
-
-                       
-
                          InteractedGameObject.GetComponent<MagicPower>().keepBook();
-
-                      
-
-                      
-
-                     
-
+                        break;
+                    case interactTypes.numb:
+                        
                         break;
 
 

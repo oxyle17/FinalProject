@@ -32,7 +32,7 @@ public class GuardMovement : MonoBehaviour
 
     void Start()
     {
-        gameObject.GetComponent<IneractionDome>().enabled = false;
+        
 
         Debug.Log("GuardMovement");
 
@@ -157,6 +157,7 @@ public class GuardMovement : MonoBehaviour
         haha();
 
         TutorialCanvas.enabled = false;
+        gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
 
         VisaUI.enabled = false;
         currentUI.enabled = true;
@@ -185,7 +186,7 @@ public class GuardMovement : MonoBehaviour
     {
 
 
-        gameObject.GetComponent<IneractionDome>().enabled = true;
+        gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.visaGuard;
 
 
     }

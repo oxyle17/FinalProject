@@ -56,6 +56,7 @@ public class WomanTrigger2 : MonoBehaviour
 
 
         Invoke(nameof(marko), 12);
+        Invoke(nameof(ChangeTag), 12.3f);
 
         
 
@@ -68,6 +69,10 @@ public class WomanTrigger2 : MonoBehaviour
        
         
     
+    }
+    public void ChangeTag()
+    {
+        gameObject.GetComponentInParent<IneractionDome>().InteractXD = interactTypes.quest1Start;
     }
 
 
