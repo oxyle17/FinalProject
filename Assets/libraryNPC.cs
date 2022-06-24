@@ -9,12 +9,11 @@ public class libraryNPC : MonoBehaviour
 
     public static libraryNPC instance;
 
-    [SerializeField] NavMeshAgent agent;
-    [SerializeField] GameObject desk;
+    public NavMeshAgent agent;
+    public GameObject desk;
     public Vector3 deskTrans;
 
     [SerializeField] Animator walk;
-
 
 
     void Start()
@@ -32,12 +31,14 @@ public class libraryNPC : MonoBehaviour
     public void WalkTodesk()
     {
 
-        walk.SetTrigger("NPCAnim");
+       
 
         deskTrans = desk.transform.position;
+        walk.SetTrigger("Npc2Anim");
         agent.SetDestination(deskTrans);
+       
 
-        
 
     }
 }
+

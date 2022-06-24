@@ -23,6 +23,8 @@ public class PlayerInteract : MonoBehaviour
     public float checkMices;
     public float checkMices2;
 
+    public bool okeyCount = false;
+
     // Fade Out - In     -Kaan
 
     public AnimationCurve FadeCurve = new AnimationCurve(new Keyframe(0, 1), new Keyframe(0.6f, 0.7f, -1.8f, -1.2f), new Keyframe(1, 0));
@@ -62,7 +64,8 @@ public class PlayerInteract : MonoBehaviour
     }        // Kaan
 
 
-    public float mice;  
+    public float mice;
+    public float totalMice = 10;
 
     void Start()
     {
@@ -180,7 +183,12 @@ public class PlayerInteract : MonoBehaviour
                         
                         break;
 
+                    case interactTypes.epicBook:
 
+                        InteractedGameObject.GetComponent<epicbook>().KeepEpicBook();
+
+
+                        break;
 
                 }
 
@@ -252,6 +260,8 @@ public class PlayerInteract : MonoBehaviour
 
         if (mice == 14)
         {
+
+            okeyCount = true;
 
             checkFloat++;
             AllMiceCollect = true;

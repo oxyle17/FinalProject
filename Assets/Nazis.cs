@@ -25,7 +25,7 @@ public class Nazis : MonoBehaviour
     [SerializeField] AudioSource narratorSound2;
 
 
-    [SerializeField] GameObject barrier;
+    public GameObject barrier;
 
     public bool Okay = false;
 
@@ -42,7 +42,10 @@ public class Nazis : MonoBehaviour
         narratorCanvas2.enabled = false;
 
 
-    }
+        barrier.gameObject.GetComponent<MeshRenderer>().enabled = false;
+
+
+    }   
 
     // Update is called once per frame
     void Update()
@@ -145,7 +148,7 @@ public class Nazis : MonoBehaviour
         Invoke(nameof(hareket), 53);
         Invoke(nameof(n2), 53);
 
-        Invoke(nameof(openBarrier), 57);
+        Invoke(nameof(OpenBarrier), 57);
 
         Okay = true;
 
@@ -177,7 +180,7 @@ public class Nazis : MonoBehaviour
 
     }
 
-    void openBarrier()
+    void OpenBarrier()
     {
 
 

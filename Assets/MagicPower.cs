@@ -11,6 +11,7 @@ public class MagicPower : MonoBehaviour
     [SerializeField] ParticleSystem pickupEffect;
     public AudioSource pickupSound;
 
+    
 
     public static MagicPower instance;
 
@@ -19,6 +20,8 @@ public class MagicPower : MonoBehaviour
         instance = this;
         achiement.enabled = false;
 
+
+        gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
 
     }
 

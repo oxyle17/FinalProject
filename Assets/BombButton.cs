@@ -5,15 +5,23 @@ using UnityEngine;
 public class BombButton : MonoBehaviour
 {
 
-    [SerializeField] AudioSource bombTimerSound;
-    
+    public static BombButton instance;
 
-    [SerializeField] float clickCount;
+    public AudioSource bombTimerSound;
+
+   
+
+    public float clickCount;
+
+    public Canvas RunCanvas;
 
 
     void Start()
     {
-        
+        instance = this;
+
+        RunCanvas.enabled = false;
+
     }
 
     void Update()
@@ -24,9 +32,20 @@ public class BombButton : MonoBehaviour
     public void bombaciMülayim()
     {
 
+        clickCount++;
+
+        if (clickCount == 1)
+        {
+           bombTimerSound.Play();
 
 
-        // Basildigi an
+            gameObject.GetComponentInParent<IneractionDome>().InteractXD = interactTypes.numb;
+
+            Invoke(nameof(openCanvas), 3);
+
+        }
+
+       
 
 
 
@@ -38,6 +57,13 @@ public class BombButton : MonoBehaviour
 
     }
 
+
+    void openCanvas()
+    {
+
+        RunCanvas.enabled = true;
+
+    }
 
 
 }

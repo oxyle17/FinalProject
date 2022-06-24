@@ -5,13 +5,17 @@ using UnityEngine;
 public class bookscene : MonoBehaviour
 {
 
+    public static bookscene instante;
+
     public Light cinematicLight;
 
-    [SerializeField] AudioSource lacrimosa;
+    public AudioSource lacrimosa;
 
+    public bool open = false;
 
     void Start()
     {
+        instante = this;
 
         cinematicLight.enabled = false;
 
@@ -20,7 +24,11 @@ public class bookscene : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         
+
+
+
     }
 
     private void OnTriggerEnter(Collider other)
@@ -37,6 +45,7 @@ public class bookscene : MonoBehaviour
     {
 
         cinematicLight.enabled = true;
+        open = true;
 
     }
 

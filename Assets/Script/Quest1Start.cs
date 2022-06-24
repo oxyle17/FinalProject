@@ -52,9 +52,10 @@ public class Quest1Start : MonoBehaviour
 
         houseTrans = house.transform.position;
         Debug.Log("RunHouse");
+
         agent.SetDestination(houseTrans);
 
-        walk.SetTrigger("walkAnim");
+        walk.SetTrigger("Npc1Anim");
 
 
         gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;

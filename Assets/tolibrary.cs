@@ -5,6 +5,7 @@ using UnityEngine;
 public class tolibrary : MonoBehaviour
 {
     public Transform changeTo;
+    public float count;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,10 +25,21 @@ public class tolibrary : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
-            if (Nazis.instance.Okay == true)
+            count++;
+
+            if (count == 1)
             {
+
+            if (Nazis.instance.Okay == true)
+             {
              other.transform.position = changeTo.position;
+             }
+
+                Destroy(this);
+
             }
+
+           
            
 
 

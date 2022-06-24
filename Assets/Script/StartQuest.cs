@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
+
 
 public class StartQuest : MonoBehaviour
 {
@@ -9,12 +12,18 @@ public class StartQuest : MonoBehaviour
 
     [SerializeField] Canvas a1;
 
+    [SerializeField] TextMeshProUGUI miceCounter;
 
+
+    public float count;
 
     void Start()
     {
         Debug.Log("StartQuest1");
         a1.enabled = false;
+
+        miceCounter.enabled = false;
+
 
     }
 
@@ -33,6 +42,27 @@ public class StartQuest : MonoBehaviour
         }
 
 
+        if (PlayerInteract.instance.mice <= 9)
+        {
+          miceCounter.text = PlayerInteract.instance.totalMice.ToString() + " / " + PlayerInteract.instance.mice.ToString();
+        }
+        if (PlayerInteract.instance.mice > 9)
+        {
+
+            if (PlayerInteract.instance.okeyCount == true)
+            {
+
+
+                miceCounter.text = PlayerInteract.instance.totalMice.ToString() + " / " + PlayerInteract.instance.totalMice.ToString();
+
+
+            }
+
+
+        }
+       
+
+
 
     }
 
@@ -42,16 +72,35 @@ public class StartQuest : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
+            count++;
 
-            if (WomanTrigger2.instance.isAcceptQuest == true)
+            if (count == 1)
             {
 
+                miceCounter.enabled = true;
 
-                 other.transform.position = changeTo.position;
+                if (WomanTrigger2.instance.isAcceptQuest == true)
+                {
 
-                  a1.enabled = true;
+
+                    other.transform.position = changeTo.position;
+
+                    a1.enabled = true;
+
+
+
+                }
+
+
+
+
+
             }
+            if (count > 1)
+            {
 
+            }
+           
            
            
 
