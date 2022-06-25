@@ -14,6 +14,8 @@ TagManager:
   - FxTemporaire
   - SlowDown
   - SpeedUp2
+  - Food
+  - FireBall
   layers:
   - Default
   - TransparentFX
