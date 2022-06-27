@@ -24,6 +24,9 @@ public class PlayerAttackScript : MonoBehaviour
 
     public void Fire()
     {
-        FireBall.transform.forward = FirePoint.transform.forward;        GameObject bulletSpawned = Instantiate(FireBall, FirePoint.position, Quaternion.identity);        bulletSpawned.transform.forward = FirePoint.transform.forward;
+        FireBall.transform.forward = FirePoint.transform.forward;
+        GameObject bulletSpawned = Instantiate(FireBall, FirePoint.position, Quaternion.identity);
+        bulletSpawned.transform.forward = FirePoint.transform.forward;
+
     }
 }

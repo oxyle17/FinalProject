@@ -79,20 +79,23 @@ public class GuardMovement : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        g1();
-        Invoke(nameof(nar), 5);
 
 
-        Invoke(nameof(haha), 15);
-        Invoke(nameof(OpenInteract), 15.2f);
-        //* elimizde
-
-        Invoke(nameof(UIchange), 15.03f);
-
-
-        LookRig.SetActive(true);
+        if (other.CompareTag("Player"))
+        {
+            g1();
+            Invoke(nameof(nar), 5);
 
 
+            Invoke(nameof(haha), 15);
+            Invoke(nameof(OpenInteract), 15.2f);
+            //* elimizde
+
+            Invoke(nameof(UIchange), 15.03f);
+
+
+            LookRig.SetActive(true);
+        }
 
 
     }
@@ -102,9 +105,13 @@ public class GuardMovement : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        LookRig.SetActive(false);
+        
+        if (other.CompareTag("Player"))
+        {
+            LookRig.SetActive(false);
 
-        Destroy(this);
+            Destroy(this);
+        }
 
     }
 
