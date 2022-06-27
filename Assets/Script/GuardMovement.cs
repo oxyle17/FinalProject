@@ -18,6 +18,7 @@ public class GuardMovement : MonoBehaviour
     [SerializeField] Canvas G2;
     [SerializeField] Canvas N1;
     [SerializeField] Canvas TutorialCanvas;
+    [SerializeField] GameObject LookRig;
 
     [SerializeField] AudioSource GS1;
     [SerializeField] AudioSource GS2;
@@ -44,7 +45,7 @@ public class GuardMovement : MonoBehaviour
         G1.enabled = false;
         G2.enabled = false;
 
-       
+        LookRig.SetActive(false);
 
 
         TargetPos = transform.position;
@@ -88,19 +89,23 @@ public class GuardMovement : MonoBehaviour
 
         Invoke(nameof(UIchange), 15.03f);
 
-        
 
-       
+        LookRig.SetActive(true);
+
+
 
 
     }
 
-  
+
 
 
     private void OnTriggerExit(Collider other)
     {
+        LookRig.SetActive(false);
+
         Destroy(this);
+
     }
 
     private void g1()
