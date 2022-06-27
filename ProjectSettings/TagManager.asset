@@ -16,6 +16,7 @@ TagManager:
   - SpeedUp2
   - Food
   - FireBall
+  - Cannonball
   layers:
   - Default
   - TransparentFX
