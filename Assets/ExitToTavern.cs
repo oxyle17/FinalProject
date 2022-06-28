@@ -19,13 +19,12 @@ public class ExitToTavern : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
 
-            Debug.Log("a");
+            Debug.Log(other.name);
 
-            Vector3 position = TransformTo.position;
-            gameObject.transform.position = position;
+            gameObject.transform.position = TransformTo.position;
 
         }
 

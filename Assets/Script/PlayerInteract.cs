@@ -161,7 +161,9 @@ public class PlayerInteract : MonoBehaviour
                         }
                         break;
                     case interactTypes.quest2Start:
+
                         InteractedGameObject.GetComponent<BlackJackStarter>().BlackJackStart();
+
                         break;
                     case interactTypes.visaGuard:
                         if (!WhatHit.collider.isTrigger && InteractedGameObject.GetComponent<GuardMovement>() != null)
