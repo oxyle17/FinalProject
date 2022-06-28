@@ -23,7 +23,7 @@ public class libraryExit : MonoBehaviour
         if (other.CompareTag("Player"))
         {
 
-            if (epicbook.instante.Openexit == true)
+            if (MagicPower.instance.canExit == true)
             {
 
                 other.transform.position = exitLibrary.position;

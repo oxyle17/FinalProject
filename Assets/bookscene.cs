@@ -11,7 +11,12 @@ public class bookscene : MonoBehaviour
 
     public AudioSource lacrimosa;
 
+    [SerializeField] AudioSource a1;
+    [SerializeField] Canvas c1;
+
+
     public bool open = false;
+    float count;
 
     void Start()
     {
@@ -19,24 +24,62 @@ public class bookscene : MonoBehaviour
 
         cinematicLight.enabled = false;
 
+        c1.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
 
-        
 
+        if (a1.isPlaying == false)
+        {
+
+            c1.enabled = false;
+
+        }
 
 
     }
 
     private void OnTriggerEnter(Collider other)
     {
+       
+       
 
-        lacrimosa.Play();
 
-        Invoke(nameof(openLight), 11.3f);
+        if (other.CompareTag("Player"))
+        {
+
+             lacrimosa.Play();
+
+           Invoke(nameof(openLight), 11.3f);
+
+        }
+
+        if (other.CompareTag("FireBall"))
+        {
+            count++;
+
+            if (count == 1)
+            {
+
+
+                a1.Play();
+                c1.enabled = true;
+
+
+
+            }
+           
+
+
+
+
+        }
+
+
 
     }
 

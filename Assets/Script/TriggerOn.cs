@@ -68,6 +68,7 @@ public class TriggerOn : MonoBehaviour
 
             sound.Stop();
             Text.enabled = false;
+
             Destroy(this);
 
         }

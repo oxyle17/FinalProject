@@ -6,6 +6,10 @@ public class FireBallScript : MonoBehaviour
 {
     Rigidbody rb;
     public float speed = 30;
+    public ParticleSystem smoke;
+    public ParticleSystem fire;
+
+
     void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -18,9 +22,49 @@ public class FireBallScript : MonoBehaviour
     {
         rb.velocity = transform.forward * speed * Time.deltaTime;
     }
-    private void OnCollisionEnter(Collision collision)
+    public void OnCollisionEnter(Collision collision)
     {
-        Debug.Log("aaa");
-        Destroy(gameObject);
+       
+
+        if (collision.gameObject.CompareTag("CanFire"))
+        {
+            Destroy(gameObject);
+            getSmoke();
+            getFire();
+        }
+
+        
+       
     }
+
+    public void getSmoke()
+    {
+        smoke.Play();
+
+        var clonesmokeVFX = Instantiate(smoke, gameObject.transform.position, Quaternion.identity);
+        print(clonesmokeVFX);
+
+        smoke.Play();
+
+
+
+
+
+    }
+
+    public void getFire()
+    {
+
+        fire.Play();
+        var cloneFire = Instantiate(fire,gameObject.transform.position, Quaternion.identity);
+        print(cloneFire);
+
+        fire.Play();
+
+
+
+    }
+
+
+
 }

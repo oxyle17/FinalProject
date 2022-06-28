@@ -145,10 +145,10 @@ public class Nazis : MonoBehaviour
         m1();
         Invoke(nameof(n1), 22);
         Invoke(nameof(m3), 27);
-        Invoke(nameof(hareket), 53);
-        Invoke(nameof(n2), 53);
+        Invoke(nameof(hareket), 49);
+        Invoke(nameof(n2), 50);
 
-        Invoke(nameof(OpenBarrier), 57);
+        Invoke(nameof(OpenBarrier), 53);
 
         Okay = true;
 

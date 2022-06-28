@@ -7,14 +7,15 @@ using TMPro;
 
 public class StartQuest : MonoBehaviour
 {
+    public static StartQuest instance;
 
     public Transform changeTo;
 
     [SerializeField] Canvas a1;
 
-    [SerializeField] TextMeshProUGUI miceCounter;
+    public TextMeshProUGUI miceCounter;
 
-
+    public bool enter=false;
     public float count;
 
     void Start()
@@ -23,7 +24,7 @@ public class StartQuest : MonoBehaviour
         a1.enabled = false;
 
         miceCounter.enabled = false;
-
+        instance = this;
 
     }
 
@@ -81,6 +82,8 @@ public class StartQuest : MonoBehaviour
 
                 if (WomanTrigger2.instance.isAcceptQuest == true)
                 {
+
+                    enter = true;
 
                     miceCounter.enabled = true; 
                     other.transform.position = changeTo.position;

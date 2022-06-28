@@ -8,6 +8,7 @@ public class epicbook : MonoBehaviour
 
     public static epicbook instante;
     public bool Openexit = false;
+    public bool openNpc = false;
     void Start()
     {
 
@@ -26,18 +27,20 @@ public class epicbook : MonoBehaviour
 
         if (bookscene.instante.open == true)
         {
-            Openexit = true;
+            openNpc = true;
 
             bookscene.instante.cinematicLight.enabled = false;
             bookscene.instante.lacrimosa.Stop();
 
+            libraryNPC.instance.speaking();
+
 
             gameObject.GetComponentInParent<IneractionDome>().InteractXD = interactTypes.numb;
 
-            MagicPower.instance.gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.MagicBook;
+            
 
 
-            libraryNPC.instance.WalkTodesk();
+           
 
         }
 

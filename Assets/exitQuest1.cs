@@ -4,11 +4,14 @@ using UnityEngine;
 
 public class exitQuest1 : MonoBehaviour
 {
+    public static exitQuest1 instance;
+
     public Transform exitToQuest1;
+
 
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame
@@ -22,10 +25,11 @@ public class exitQuest1 : MonoBehaviour
     {
 
 
-        if (Nazis.instance.Okay == true)
+        if (AnlatýcýScript.instance.acs == true)
         {
-
+           
             other.transform.position = exitToQuest1.position;
+            
 
         }
 

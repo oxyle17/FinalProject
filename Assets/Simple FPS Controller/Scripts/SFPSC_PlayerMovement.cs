@@ -68,7 +68,7 @@ public class SFPSC_PlayerMovement : MonoBehaviour
     public bool IsGrounded { get { return isGrounded; } }
 
     private Vector3 inputForce;
-    private int i = 0;
+   
     private float prevY;
     private void FixedUpdate()
     {
@@ -76,9 +76,6 @@ public class SFPSC_PlayerMovement : MonoBehaviour
             isGrounded = false;
         else
         {
-            // I recieved several messages that there are some bugs and I found out that the ground check is not working properly
-            // so I made this one. It's faster and all it needs is the velocity of the rigidbody in two frames.
-            // It works pretty well!
             isGrounded = (Mathf.Abs(rb.velocity.y - prevY) < .1f) && (Physics.OverlapSphere(groundChecker.position, groundCheckerDist).Length > 1); // > 1 because it also counts the player
             prevY = rb.velocity.y;
         }

@@ -96,6 +96,9 @@ quest1Music.Play();
 
     public void Sahne1()
     {
+
+        StartQuest.instance.miceCounter.enabled = false;
+
         duvarYikim.Play();
 
         Invoke(nameof(doorDestroy), 2);

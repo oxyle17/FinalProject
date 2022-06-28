@@ -18,7 +18,12 @@ public class PlayerAttackScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            Fire();
+            if (MagicPower.instance.CanFire == true)
+            {
+              Fire();
+            }
+
+           
         }
     }
 
@@ -28,5 +33,15 @@ public class PlayerAttackScript : MonoBehaviour
         GameObject bulletSpawned = Instantiate(FireBall, FirePoint.position, Quaternion.identity);
         bulletSpawned.transform.forward = FirePoint.transform.forward;
 
+
+     
+
+
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
 }

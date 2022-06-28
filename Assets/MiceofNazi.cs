@@ -79,7 +79,7 @@ public class MiceofNazi : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
 
-        Invoke(nameof(destoryCube), 13);
+        Invoke(nameof(destoryCube), 15);
 
 
 

@@ -6,10 +6,14 @@ public class tolibrary : MonoBehaviour
 {
     public Transform changeTo;
     public float count;
+
+    public GameObject duman;
+
+    
     // Start is called before the first frame update
     void Start()
     {
-
+        duman.SetActive(false);
     }
 
     // Update is called once per frame
@@ -30,12 +34,15 @@ public class tolibrary : MonoBehaviour
             if (count == 1)
             {
 
-            if (Nazis.instance.Okay == true)
+            if (EndQuest.instance.a1 == true)
              {
-             other.transform.position = changeTo.position;
+               other.transform.position = changeTo.position;
+               duman.SetActive(true);
+
+
              }
 
-                Destroy(this);
+                
 
             }
 
