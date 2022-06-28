@@ -64,7 +64,10 @@ public class TriggerOn : MonoBehaviour
 
         if (other.CompareTag("Player"))
         {
-             
+
+
+            sound.Stop();
+            Text.enabled = false;
             Destroy(this);
 
         }

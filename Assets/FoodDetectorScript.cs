@@ -16,7 +16,7 @@ public class FoodDetectorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (foodCounter > 10) cookable = true;
+        if (foodCounter >= 10) cookable = true;
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -24,7 +24,7 @@ public class FoodDetectorScript : MonoBehaviour
         {
             foodCounter++;
         }
-        else if (other.CompareTag("FireBall") && cookable)
+         if (other.CompareTag("FireBall") && cookable)
         {
             Cook();
         }

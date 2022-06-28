@@ -21,14 +21,23 @@ public class playSound : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        if (other.tag == "Player")
+        {
+           sound.Play();
+        }
         
-        sound.Play();
     }
 
     private void OnTriggerExit(Collider other)
     {
 
-        sound.Stop();
+        if (other.tag == "Player")
+        {
+ sound.Stop();
+        }
+       
+
+
     }
 
 }

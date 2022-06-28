@@ -8,6 +8,8 @@ public class AraSahen : MonoBehaviour
 
     public ParticleSystem doorVFX;
 
+    [SerializeField] AudioSource duvarYikim;
+
     [SerializeField] AudioSource fareA1;
     [SerializeField] AudioSource fareA2;
     [SerializeField] AudioSource fareA3;
@@ -94,17 +96,21 @@ quest1Music.Play();
 
     public void Sahne1()
     {
-        doorDestroy();
-        PlayerInteract.instance.duvar.GetComponent<MeshRenderer>().enabled = false;
+        duvarYikim.Play();
+
+        Invoke(nameof(doorDestroy), 2);
+
+
+        Invoke(nameof(meshClose), 3);
 
 
 
 
-        AnlaticiTalk3();
+        Invoke(nameof(AnlaticiTalk3), 4);
 
-        Invoke(nameof(AnlaticiTalk4), 18);
+        Invoke(nameof(AnlaticiTalk4), 22);
 
-        Invoke(nameof(destroyWall), 19);
+        Invoke(nameof(destroyWall), 23);
 
 
 
@@ -180,5 +186,12 @@ quest1Music.Play();
 
     }
 
+    public void meshClose()
+    {
+
+        PlayerInteract.instance.duvar.GetComponent<MeshRenderer>().enabled = false;
+
+
+    }
 
 }

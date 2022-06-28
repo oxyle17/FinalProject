@@ -35,19 +35,32 @@ public class WomanTrigger1 : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
+        if (other.tag == "Player")
+        {
+           ws1.Play();
+           w1.enabled = true;
+           questionMark.enabled = true;
 
 
-        ws1.Play();
-        w1.enabled = true;
-        questionMark.enabled = true;
+        }
 
+       
 
     }
     private void OnTriggerExit(Collider other)
     {
-        questionMark.enabled = false;
 
-        gameObject.GetComponent<BoxCollider>().enabled = false;
+        if (other.tag == "Player")
+        {
+
+          questionMark.enabled = false;
+
+           gameObject.GetComponent<BoxCollider>().enabled = false;
+
+
+        }
+        
+        
 
 
     }
