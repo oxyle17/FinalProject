@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class BJGameManager : MonoBehaviour
 {
+
+    public static BJGameManager instance;
+
     public Button dealButton;
     public Button hitButton;
     public Button standButton;
@@ -29,10 +32,14 @@ public class BJGameManager : MonoBehaviour
     public GameObject BJCamera;
     public GameObject BJCanvas;
     public GameObject BJNPC;
+
+    public bool endOfGame;
     
 
     void Start()
     {
+        instance = this;
+
         dealButton.onClick.AddListener(() => DealClicked());
         hitButton.onClick.AddListener(() => HitClicked());
         standButton.onClick.AddListener(() => StandClicked());
@@ -138,8 +145,9 @@ public class BJGameManager : MonoBehaviour
             hideCard.GetComponent<Renderer>().enabled = false;
             standClicks = 0;
         }
-        if (wins >= 10 || losses >= 3)
+        if (wins >= 5 || losses >= 5)
         {
+            endOfGame = true;
             BJNPC.GetComponent<BlackJackStarter>().BlackJackEnd();
         }
 
