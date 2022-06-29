@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class serseri : MonoBehaviour
 {
+
+    public static serseri instance;
+
     [SerializeField] Canvas serseri1;
 
     [SerializeField] Canvas serseri2;
 
-   
+    public bool okey;
 
     [SerializeField] AudioSource serseriSound1;
     [SerializeField] AudioSource serseriSound2;
     float count;
+    float gameCount;
     
 
     void Start()
     {
 
-        
+        instance = this;
 
 
         gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
@@ -60,10 +64,11 @@ public class serseri : MonoBehaviour
             if (count == 1)
             {
                  gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
-
-                a2();
-            }
+                 Invoke(nameof(a2), 2);
                 
+                okey = true;
+            }
+               
 
 
 
@@ -104,9 +109,15 @@ public class serseri : MonoBehaviour
 
         if (other.gameObject.CompareTag("Player"))
         {
+            gameCount++;
 
-            a1();
-            Invoke(nameof(openNumb), 4);
+            if (gameCount == 1)
+            {
+             a1();
+             Invoke(nameof(openNumb), 4);
+            }
+
+           
 
            
 

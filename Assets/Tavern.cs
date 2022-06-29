@@ -12,6 +12,8 @@ public class Tavern : MonoBehaviour
 
     float count;
 
+    public GameObject women;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -48,7 +50,7 @@ public class Tavern : MonoBehaviour
                     ruinKütüphane.SetActive(true);
                     dumanlar.SetActive(false);
 
-                    
+                    women.SetActive(false);
 
 
                 }

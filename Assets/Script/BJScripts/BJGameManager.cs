@@ -8,6 +8,10 @@ public class BJGameManager : MonoBehaviour
 
     public static BJGameManager instance;
 
+    public AudioSource cardShuffle;
+    public AudioSource cardDealSound;
+
+
     public Button dealButton;
     public Button hitButton;
     public Button standButton;
@@ -55,6 +59,9 @@ public class BJGameManager : MonoBehaviour
 
     private void DealClicked()
     {
+
+        cardShuffle.Play();
+
         playerScript.ResetHand();
         dealerScript.ResetHand();
 
@@ -76,13 +83,16 @@ public class BJGameManager : MonoBehaviour
 
     private void HitClicked()
     {
+        cardDealSound.Play();
 
         if (playerScript.cardIndex <= 10)
         {
             playerScript.GetCard();
             scoreText.text = "Hand" + playerScript.handValue.ToString();
-            if (playerScript.handValue > 20) RoundOver();
+            if (playerScript.handValue > 20) RoundOver();  
         }
+
+       
     }
 
 
@@ -98,6 +108,8 @@ public class BJGameManager : MonoBehaviour
     {
         while (dealerScript.handValue < 16 && dealerScript.cardIndex < 10)
         {
+            cardDealSound.Play();
+
             dealerScript.GetCard();
             dealerScoreText.text = "Dealer Hand:" + dealerScript.handValue.ToString();
             if (dealerScript.handValue > 20) RoundOver();
@@ -138,6 +150,8 @@ public class BJGameManager : MonoBehaviour
         }
         if (roundOver)
         {
+            cardDealSound.Play();
+
             hitButton.gameObject.SetActive(false);
             standButton.gameObject.SetActive(false);
             dealButton.gameObject.SetActive(true);
@@ -148,8 +162,22 @@ public class BJGameManager : MonoBehaviour
         if (wins >= 5 || losses >= 5)
         {
             endOfGame = true;
-            BJNPC.GetComponent<BlackJackStarter>().BlackJackEnd();
+
+
+            Invoke(nameof(wait), 2);
         }
 
+
+       
+
     }
+
+ void wait()
+        {
+
+        BJNPC.GetComponent<BlackJackStarter>().BlackJackEnd();
+
+    }
+
+
 }

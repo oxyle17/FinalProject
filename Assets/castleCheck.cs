@@ -7,6 +7,8 @@ public class castleCheck : MonoBehaviour
     [SerializeField] AudioSource guardS;
     [SerializeField] Canvas guardC;
 
+    public Transform TargetTo;
+
     void Start()
     {
         guardC.enabled = false;
@@ -29,12 +31,16 @@ public class castleCheck : MonoBehaviour
     {
 
 
-        if (other.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
 
+           
 
-            guardS.Play();
-            guardC.enabled = true;
+          gameObject.transform.position = TargetTo.position;
+
+
+           
+
 
         }
 
