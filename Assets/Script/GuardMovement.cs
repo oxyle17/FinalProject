@@ -24,6 +24,10 @@ public class GuardMovement : MonoBehaviour
     [SerializeField] AudioSource GS2;
     [SerializeField] AudioSource N;
 
+    [SerializeField] GameObject door1;
+    [SerializeField] GameObject door2;
+
+
 
 
     public bool isArrive = false;
@@ -151,14 +155,15 @@ public class GuardMovement : MonoBehaviour
     private void GuardMov()
     {
 
+        door1.GetComponent<RotateDoorScript>().Door1OpenTrigger();
+        door2.GetComponent<RotateDoorScript2>().Door1OpenTrigger();
+
+
+        //door.instance.openDoor();
 
 
 
-        door.instance.openDoor();
-        
 
-
-        
 
 
 

@@ -30,6 +30,7 @@ public class BlackJackStarter : MonoBehaviour
         Player.GetComponent<SC_FPSController>().enabled = false;
         Player.GetComponent<AttackUI>().enabled = false;
         Player.GetComponentInChildren<PlayerInteract>().enabled = false;
+        Player.GetComponent<PlayerAttackScript>().enabled = false;
         PlayerUI.SetActive(false);
         PlayerCam.SetActive(false);
         BJCam.SetActive(true);
@@ -44,6 +45,7 @@ public class BlackJackStarter : MonoBehaviour
         Player.GetComponent<SC_FPSController>().enabled = true;
         Player.GetComponent<AttackUI>().enabled = true;
         PlayerCam.GetComponent<PlayerInteract>().enabled = true;
+        Player.GetComponent<PlayerAttackScript>().enabled = true;
         PlayerUI.SetActive(true);
         PlayerCam.SetActive(true);
         BJCam.SetActive(false);
