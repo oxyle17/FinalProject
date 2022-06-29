@@ -70,6 +70,17 @@ public class SC_FPSController : MonoBehaviour
 
         }
 
+
+        if (other.CompareTag("MaxSpeed"))
+        {
+
+            walkingSpeed = 10.0f;
+            runningSpeed = 15.0f;
+
+
+        }
+
+
     }
 
 

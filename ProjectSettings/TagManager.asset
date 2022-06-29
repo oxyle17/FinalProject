@@ -18,6 +18,7 @@ TagManager:
   - FireBall
   - Cannonball
   - CanFire
+  - MaxSpeed
   layers:
   - Default
   - TransparentFX

@@ -5,7 +5,8 @@ using UnityEngine;
 public class FireBallScript : MonoBehaviour
 {
     Rigidbody rb;
-    public float speed = 30;
+    public float speed = 30;
+
     public ParticleSystem smoke;
     public ParticleSystem fire;
 
@@ -24,14 +25,18 @@ public class FireBallScript : MonoBehaviour
     }
     public void OnCollisionEnter(Collision collision)
     {
-       
 
-        if (collision.gameObject.CompareTag("CanFire"))
+        if (collision.gameObject.CompareTag("CanFire")) // Kütüphane
         {
             Destroy(gameObject);
             getSmoke();
             getFire();
         }
+        
+        Destroy(gameObject);
+
+
+        
 
         
        

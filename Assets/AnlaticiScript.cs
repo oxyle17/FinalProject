@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnlatıcıScript : MonoBehaviour
+public class AnlaticiScript : MonoBehaviour
 {
     [SerializeField] AudioSource anlaticiP1;
     [SerializeField] Canvas anlaticiCanvas;
     [SerializeField] Canvas anlaticiCanvas2;
 
-    public static AnlatıcıScript instance;
+    public static AnlaticiScript instance;
 
     public bool acs = false;
     float count;

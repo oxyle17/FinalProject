@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: 
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: "Assets/Scenes/GirisY\xFCkleme.unity"
+    guid: a29f660ef04392842b09636929641403
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 105bc5b740db0144db7d1c3b062e8e08
+  - enabled: 1
+    path: Assets/Scenes/AfterMenuSinematik.unity
+    guid: 36f5cc92d4535844e8799e65b98bcd68
+  - enabled: 1
     path: Assets/Scenes/City.unity
     guid: d94bfe012e082784fa07365a3d818f44
   m_configObjects: {}

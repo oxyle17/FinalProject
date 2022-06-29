@@ -151,7 +151,7 @@ public class SFPSC_GrapplingHook : MonoBehaviour
     private IEnumerator Decelerate()
     {
         WaitForEndOfFrame wfeof = new WaitForEndOfFrame();
-        max = deceleratingTime * Mathf.Clamp01(targetDistance / 10.0f) * Mathf.Clamp01(rb.velocity.magnitude / 30.0f);
+      //  max = deceleratingTime * Mathf.Clamp01(targetDistance / 10.0f) * Mathf.Clamp01(rb.velocity.magnitude / 30.0f);
         for (; decelerateTimer < max; decelerateTimer += Time.deltaTime)
         {
             rb.AddForce(-rb.velocity.normalized * deceleration * (1.0f - decelerateTimer / max) * Mathf.Clamp01(rb.velocity.sqrMagnitude / 400.0f) * Time.deltaTime, ForceMode.Acceleration);
@@ -162,17 +162,17 @@ public class SFPSC_GrapplingHook : MonoBehaviour
 
     private Vector3 dir;
 
-    private float speed = 0.0f, targetDistance;
+  //  private float speed = 0.0f, targetDistance;
     private void GrappleUpdate()
     {
         if (location == null)
             return;
         
-        targetDistance = Vector3.Distance(transform.position, location.position);
-        rope.segments = (int)((targetDistance / maxGrappleDistance) * segments);
+       // targetDistance = Vector3.Distance(transform.position, location.position);
+       // rope.segments = (int)((targetDistance / maxGrappleDistance) * segments);
         dir = (location.position - transform.position).normalized;
         
-        rb.velocity = Vector3.Lerp(rb.velocity, dir * maximumSpeed * Mathf.Clamp01(targetDistance / (4.0f * distanceToStop)), Time.deltaTime);
+      //  rb.velocity = Vector3.Lerp(rb.velocity, dir * maximumSpeed * Mathf.Clamp01(targetDistance / (4.0f * distanceToStop)), Time.deltaTime);
 
         // Rope updating
         rope.UpdateStart(transform.position);

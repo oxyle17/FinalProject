@@ -4,19 +4,45 @@ using UnityEngine;
 
 public class FoodDetectorScript : MonoBehaviour
 {
+
+
+    public static FoodDetectorScript instance;
+
     public float foodCounter;
     public GameObject[] foodObjects;
     public bool cookable;
 
+
+    public GameObject sofra;
+    public Transform sofraTarget;
+
+
+   
+
+   
+
+
+
     void Start()
     {
+        instance = this;
+
         foodObjects = GameObject.FindGameObjectsWithTag("Food");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (foodCounter >= 10) cookable = true;
+        if (foodCounter >= 5) cookable = true;
+
+        if (cookable == true)
+        {
+
+            MagicPower.instance.CanFire = true;
+
+
+        }
+
     }
     private void OnTriggerEnter(Collider other)
     {
@@ -39,10 +65,38 @@ public class FoodDetectorScript : MonoBehaviour
     public void Cook()
     {
         //diyalog fln
+
+         KingTrigger.instance.missionSound.Stop();
+
+         sofraVFX.instance.getEffect();
+
+
         foreach (GameObject foodObject in foodObjects)
         {
-            Destroy(foodObject);
+             Destroy(foodObject);
+
+           
+
         }
 
+       
+         teleportSofra();
+
     }
+
+    public void teleportSofra()
+    {
+
+        sofra.transform.position = sofraTarget.position;
+
+
+
+    }
+
+
+   
+
+    
+
+
 }

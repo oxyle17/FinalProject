@@ -25,7 +25,7 @@ public class exitQuest1 : MonoBehaviour
     {
 
 
-        if (AnlatýcýScript.instance.acs == true)
+        if (AnlaticiScript.instance.acs == true)
         {
            
             other.transform.position = exitToQuest1.position;
