@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NARRATORSCRIPT : MonoBehaviour
 {
@@ -11,16 +12,29 @@ public class NARRATORSCRIPT : MonoBehaviour
 
     public bool COMBATBool;
 
-    public float timeSinceLastATTACK = 1;
-    public float ATTACKInterval = 2;
+    public GameObject healthBarObj;
+    public Slider healthBar;
+    public float currentHealth;
+    public float maxHealth = 100;
 
     [SerializeField] GameObject Player;
     [SerializeField] GameObject NARRATORCANNON;
     [SerializeField] GameObject NARRATORBULLETPREFAB;
+
+    public float timeSinceLastATTACK;
+    public float ATTACKInterval;
+
     void Start()
     {
-        RISEPos = new Vector3(200, 1, 500);
+        RISEPos = new Vector3(200, 75, 500);
+        
         Invoke(nameof(NARRATORRISE), 6);
+
+        healthBar = GetComponentInChildren<Slider>();
+        currentHealth = maxHealth;
+        //HealthSlider.maxValue = maxHealth;
+        //HealthSlider.value = currentHealth;
+
     }
 
     void Update()
@@ -44,13 +58,17 @@ public class NARRATORSCRIPT : MonoBehaviour
 
         if (COMBATBool)
         {
-            
             timeSinceLastATTACK += Time.deltaTime;
 
             if (timeSinceLastATTACK >= ATTACKInterval)
             {
                 NARRATORATTACK();
             }
+        }
+        
+        if (currentHealth <= 0)
+        {
+            end();
         }
     }
 
@@ -76,8 +94,25 @@ public class NARRATORSCRIPT : MonoBehaviour
 
     }
 
+    public void Cannonned()
+    {
+        currentHealth -= 20;
+    }
+
     public void NARRATORRECOVER()
     {
 
+    }
+
+    public void end()
+    {
+
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("FireBall"))
+        {
+            currentHealth -= 5;
+        }
     }
 }

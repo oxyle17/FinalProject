@@ -13,7 +13,7 @@ public class NARRATORBULLETSCRIPT : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 10);
+        Destroy(gameObject, 30);
         Player = GameObject.FindGameObjectWithTag("Player");
         moveDir = (Player.transform.position - transform.position).normalized * speed * Time.deltaTime;
         rb.velocity = new Vector3(moveDir.x, moveDir.y, moveDir.z);
@@ -22,8 +22,13 @@ public class NARRATORBULLETSCRIPT : MonoBehaviour
     {
         
     }
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Destroy(gameObject);
+        if (!other.CompareTag("FireBall"))
+        {
+            Destroy(gameObject);
+        }
+
+
     }
 }

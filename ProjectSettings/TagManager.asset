@@ -19,6 +19,7 @@ TagManager:
   - Cannonball
   - CanFire
   - MaxSpeed
+  - NARRATORBULLET
   layers:
   - Default
   - TransparentFX

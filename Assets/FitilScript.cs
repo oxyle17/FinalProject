@@ -5,6 +5,7 @@ using UnityEngine;
 public class FitilScript : MonoBehaviour
 {
     public bool JustFired;
+    [SerializeField] GameObject NARRATOR;
     void Start()
     {
         
@@ -27,5 +28,7 @@ public class FitilScript : MonoBehaviour
     public void FireCannon()
     {
         //Kaan buraya ateş sesi
+        NARRATOR.GetComponent<NARRATORSCRIPT>().Cannonned();
+        
     }
 }
