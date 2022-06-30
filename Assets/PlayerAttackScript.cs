@@ -8,6 +8,7 @@ public class PlayerAttackScript : MonoBehaviour
     public Transform FirePoint;
     public Camera Cam;
     public GameObject FireEnabler;
+    public float health = 3;
 
     void Start()
     {
@@ -32,9 +33,9 @@ public class PlayerAttackScript : MonoBehaviour
         bulletSpawned.transform.forward = FirePoint.transform.forward;
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void TakeDamage()
     {
-        
+        health--;
     }
 
 }

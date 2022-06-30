@@ -30,11 +30,10 @@ public class NARRATORSCRIPT : MonoBehaviour
         
         Invoke(nameof(NARRATORRISE), 6);
 
-        healthBar = GetComponentInChildren<Slider>();
+        healthBar = healthBarObj.GetComponentInChildren<Slider>();
         currentHealth = maxHealth;
-        //HealthSlider.maxValue = maxHealth;
-        //HealthSlider.value = currentHealth;
-
+        healthBar.value = currentHealth;
+        healthBar.maxValue = maxHealth;
     }
 
     void Update()
@@ -75,6 +74,7 @@ public class NARRATORSCRIPT : MonoBehaviour
     public void NARRATORRISE()
     {
         RISINGBool = true;
+        healthBar.value = currentHealth;
     }
 
     public void NARRATORCOMBATSTART()
@@ -97,6 +97,7 @@ public class NARRATORSCRIPT : MonoBehaviour
     public void Cannonned()
     {
         currentHealth -= 20;
+        healthBar.value = currentHealth;
     }
 
     public void NARRATORRECOVER()
@@ -113,6 +114,7 @@ public class NARRATORSCRIPT : MonoBehaviour
         if (collision.gameObject.CompareTag("FireBall"))
         {
             currentHealth -= 5;
+            healthBar.value = currentHealth;
         }
     }
 }

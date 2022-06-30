@@ -27,7 +27,7 @@ public class CannonScript : MonoBehaviour
 
         if (fitil.GetComponent<FitilScript>().JustFired)
         {
-            Invoke(nameof(Reload), 2);
+            Reload();
         }
     }
 
