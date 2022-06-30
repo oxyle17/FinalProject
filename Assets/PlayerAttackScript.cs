@@ -7,23 +7,21 @@ public class PlayerAttackScript : MonoBehaviour
     [SerializeField] public GameObject FireBall;
     public Transform FirePoint;
     public Camera Cam;
+    public GameObject FireEnabler;
 
     void Start()
     {
         
     }
-
-    // Update is called once per frame
+    
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
-            if (MagicPower.instance.CanFire == true)
+            if (MagicPower.CanFire == true)
             {
               Fire();
             }
-
-           
         }
     }
 
@@ -32,11 +30,6 @@ public class PlayerAttackScript : MonoBehaviour
         FireBall.transform.forward = FirePoint.transform.forward;
         GameObject bulletSpawned = Instantiate(FireBall, FirePoint.position, Quaternion.identity);
         bulletSpawned.transform.forward = FirePoint.transform.forward;
-
-
-     
-
-
     }
 
     private void OnTriggerEnter(Collider other)

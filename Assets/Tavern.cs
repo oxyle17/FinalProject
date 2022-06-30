@@ -58,7 +58,7 @@ public class Tavern : MonoBehaviour
                 {
                    other.transform.position = changeTo.position;
 
-                   MagicPower.instance.CanFire = false;
+                   MagicPower.CanFire = false;
 
                 }
 

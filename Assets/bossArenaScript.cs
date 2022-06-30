@@ -14,6 +14,7 @@ public class bossArenaScript : MonoBehaviour
     void Start()
     {
         Hands.enabled = false;
+        MagicPower.CanFire = true;
         narratorCanvas.enabled = false;
         BlackScreen.enabled = true;
         bossArena();

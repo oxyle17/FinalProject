@@ -48,7 +48,7 @@ public class EndQuest : MonoBehaviour
         }
 
 
-        if (MagicPower.instance.CanFire == true)
+        if (MagicPower.CanFire == true)
         {
 
             Destroy(this);

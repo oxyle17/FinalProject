@@ -155,7 +155,7 @@ public class sofraVFX : MonoBehaviour
     public void getEffect()
     {
 
-        MagicPower.instance.CanFire = false;
+        MagicPower.CanFire = false;
 
 
         fx1.Play();

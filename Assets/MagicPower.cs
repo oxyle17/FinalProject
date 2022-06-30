@@ -11,7 +11,7 @@ public class MagicPower : MonoBehaviour
     [SerializeField] ParticleSystem pickupEffect;
     public AudioSource pickupSound;
 
-    public bool CanFire = false;
+    public static bool CanFire = false;
 
     public bool canExit = false;
 

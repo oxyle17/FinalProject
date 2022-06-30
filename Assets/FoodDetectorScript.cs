@@ -38,7 +38,7 @@ public class FoodDetectorScript : MonoBehaviour
         if (cookable == true)
         {
 
-            MagicPower.instance.CanFire = true;
+            MagicPower.CanFire = true;
 
 
         }
