@@ -126,10 +126,10 @@ Material:
     - _ReceiveShadows: 1
     - _RecieveShadowIntensity: 0.079
     - _Reflectivity: 0
-    - _ShadowCutoff: 0.44
+    - _ShadowCutoff: 0.16
     - _ShadowFalloff: 0.05
     - _ShadowIntesity: 1
-    - _ShadowStep: -0.214
+    - _ShadowStep: -0.083
     - _Shadow_Bleeding: 0.028
     - _Smoothness: 48
     - _SmoothnessTextureChannel: 0

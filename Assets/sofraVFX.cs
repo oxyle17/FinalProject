@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class sofraVFX : MonoBehaviour
 {
@@ -26,6 +27,11 @@ public class sofraVFX : MonoBehaviour
     //============================
     //Narrator
 
+    public Canvas bossCanvas;
+    public AudioSource bossSound;
+
+
+
     public Canvas narCan1;
     public Canvas narCan2;
     public Canvas narCan3;
@@ -50,6 +56,9 @@ public class sofraVFX : MonoBehaviour
 
     void Start()
     {
+
+        bossCanvas.enabled = false;
+
         instance = this;
         apple.GetComponent<MeshRenderer>().enabled = false;
 
@@ -111,7 +120,7 @@ public class sofraVFX : MonoBehaviour
         }
 
 
-        if (narSon4.isPlaying == false)
+        if (narSon4.isPlaying == false) // bossmüzikbasla
         {
             narCan4.enabled = false;
         }
@@ -125,6 +134,22 @@ public class sofraVFX : MonoBehaviour
         // =============================================
 
 
+    }
+
+    void startBoss()
+    {
+
+
+        bossSound.Play();
+
+
+    }
+
+    void bossCanvasOpen()
+    {
+
+
+        bossCanvas.enabled = true;
     }
 
     public void getEffect()
@@ -163,9 +188,13 @@ public class sofraVFX : MonoBehaviour
         Invoke(nameof(speak4), 30);
         Invoke(nameof(speak5), 37);
         Invoke(nameof(speak6), 45);
-        //Invoke(nameof(speak7), 52);
-
+        Invoke(nameof(startBoss), 43);
+        Invoke(nameof(bossCanvasOpen),57);
+        Invoke(nameof(speak7), 63); //loadscene
+        
     }
+        
+        
 
 
     void openApple()
@@ -244,9 +273,7 @@ public class sofraVFX : MonoBehaviour
     void speak7()      // Narrator5
     {
 
-        narCan5.enabled = true;
-        narSon5.Play();
-
+        SceneManager.LoadScene(4);
 
     }
 

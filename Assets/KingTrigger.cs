@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class KingTrigger : MonoBehaviour
 {
@@ -131,6 +132,7 @@ public class KingTrigger : MonoBehaviour
             {
 
                 a1();
+               
                 Invoke(nameof(a2), 5);
 
                 Invoke(nameof(nar1), 10);
@@ -149,6 +151,7 @@ public class KingTrigger : MonoBehaviour
 
 
     }
+
 
 
     void a1()

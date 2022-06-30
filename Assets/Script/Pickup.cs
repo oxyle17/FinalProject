@@ -7,6 +7,7 @@ public class Pickup : MonoBehaviour
 
     public Transform theDest;
 
+    
 
     private void Start()
     {
@@ -19,12 +20,18 @@ public class Pickup : MonoBehaviour
     {
         if (Input.GetKeyUp(KeyCode.E))
         {
+
+
+
             PuttingDown();
         }
     }
 
     public void PickingUp()
     {
+      
+
+
         GetComponent<BoxCollider>().enabled = false;
         GetComponent<Rigidbody>().useGravity = false;
         transform.position = theDest.position;
@@ -38,20 +45,7 @@ public class Pickup : MonoBehaviour
         GetComponent<BoxCollider>().enabled = true;
     }
 
-    //void OnMouseDown()
-    //{
-    //    GetComponent<BoxCollider>().enabled = false;
-    //    GetComponent<Rigidbody>().useGravity = false;
-    //    this.transform.position = theDest.position;
-    //    this.transform.parent = GameObject.Find("Destination").transform;
-    //}
-
-    //private void OnMouseUp()
-    //{
-    //    this.transform.parent = null;
-    //    GetComponent<Rigidbody>().useGravity = true;
-    //    GetComponent<BoxCollider>().enabled = true;
-    //}
+    
 
 
 
