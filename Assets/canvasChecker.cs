@@ -17,8 +17,8 @@ public class canvasChecker : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        bossArenaScript.CanOpen = true;
-    }
+    //void Update()
+    //{
+    //    bossArenaScript.CanOpen = true;
+    //}
 }

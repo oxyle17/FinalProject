@@ -38,17 +38,21 @@ public class PlayerAttackScript : MonoBehaviour
 
     public AudioSource fireballAudio;
 
+    private void Awake()
+    {
+        if (bossArenaScript.CanOpen == true) // city scene
+        {
+            CityCanvas();
+
+        }
+    }
     void Start()
     {
         instance = this;
 
         attackUI.enabled = false;
 
-        if (bossArenaScript.CanOpen == true) // city scene
-        {
-            CityCanvas();
-            
-        }
+        
 
 
         if (bossArenaScript.CanOpen == false) // boss

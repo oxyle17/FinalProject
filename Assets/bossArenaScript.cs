@@ -23,10 +23,10 @@ public class bossArenaScript : MonoBehaviour
     void Start()
     {
 
-        PlayerAttackScript.instance.canvaslar.SetActive(true);
+        //PlayerAttackScript.instance.canvaslar.SetActive(true);
 
       
-            Invoke(nameof(PlayerAttackScript.instance.dokunma), 25);
+        Invoke(nameof(PlayerAttackScript.instance.dokunma), 25);
 
 
         Instance = this;

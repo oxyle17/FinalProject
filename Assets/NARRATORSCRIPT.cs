@@ -25,7 +25,7 @@ public class NARRATORSCRIPT : MonoBehaviour
     public float currentHealth;
     public float maxHealth = 10;
 
-    [SerializeField] GameObject Player;
+    public GameObject Player;
     [SerializeField] GameObject NARRATORCANNON;
     [SerializeField] GameObject NARRATORBULLETPREFAB;
 
@@ -40,26 +40,25 @@ public class NARRATORSCRIPT : MonoBehaviour
     {
 
         Invoke(nameof(BarEnable), 10); //
+        Invoke(nameof(PlayerCanvasEnable), 2);
 
         Invoke(nameof(riseModel), 12);
         instance = this;
         Invoke(nameof(NARRATORRISE), 12);
 
-
         effect.SetActive(false);
         
-
         healthBar = healthBarObj.GetComponentInChildren<Slider>();
-
-
-        
-
 
         currentHealth = maxHealth;
         healthBar.value = currentHealth;
         healthBar.maxValue = maxHealth;
     }
 
+    public void PlayerCanvasEnable()
+    {
+        Player.GetComponent<PlayerAttackScript>().canvaslar.SetActive(true);
+    }
 
     void BarEnable()
     {
