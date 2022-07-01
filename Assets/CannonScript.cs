@@ -6,9 +6,16 @@ public class CannonScript : MonoBehaviour
 {
     public GameObject barrel;
     public GameObject fitil;
+
+    public Canvas ReadyCanvas;
+    public Canvas ReloadCanvas;
+
     void Start()
     {
         fitil.GetComponent<BoxCollider>().enabled = false;
+        ReadyCanvas.enabled = false;
+
+        ReloadCanvas.enabled = true;
     }
 
     // Update is called once per frame
@@ -16,6 +23,9 @@ public class CannonScript : MonoBehaviour
     {
         if (barrel.GetComponent<BarrelScript>().CannonFireable)
         {
+            ReloadCanvas.enabled = false;
+            ReadyCanvas.enabled = true;
+
             fitil.GetComponent<BoxCollider>().enabled = true;
             barrel.GetComponent<BoxCollider>().enabled = false;
         }
@@ -27,6 +37,9 @@ public class CannonScript : MonoBehaviour
 
         if (fitil.GetComponent<FitilScript>().JustFired)
         {
+            ReloadCanvas.enabled = true;
+            ReadyCanvas.enabled = false;
+
             Reload();
         }
     }

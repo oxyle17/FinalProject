@@ -6,6 +6,15 @@ public class FitilScript : MonoBehaviour
 {
     public bool JustFired;
     [SerializeField] GameObject NARRATOR;
+
+
+    [SerializeField] AudioSource fireSound;
+    [SerializeField] AudioSource bossStanSound;
+
+    [SerializeField] ParticleSystem fireVFX;
+
+    [SerializeField] GameObject fireLoc;
+
     void Start()
     {
         
@@ -29,6 +38,33 @@ public class FitilScript : MonoBehaviour
     {
         //Kaan buraya ateş sesi
         NARRATOR.GetComponent<NARRATORSCRIPT>().Cannonned();
+        getEffect();
         
     }
+
+
+
+    public void getEffect()
+    {
+        fireSound.Play();
+
+        fireVFX.Play();
+
+        var cloneFireVFX = Instantiate(fireVFX, fireLoc.transform.position, Quaternion.identity);
+        print(cloneFireVFX);
+
+        fireVFX.Play();
+
+        Invoke(nameof(stanSound), 1);
+
+
+    }
+
+    void stanSound()
+    {
+
+
+        bossStanSound.Play();
+    }
+
 }

@@ -23,6 +23,7 @@ public class exta : MonoBehaviour
         if (other.gameObject.CompareTag("Player"))
         {
 
+           // MagicPower.CanFire = true;
             other.transform.position = changeTo.position;
 
 

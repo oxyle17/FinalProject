@@ -5,6 +5,9 @@ using UnityEngine.UI;
 
 public class NARRATORSCRIPT : MonoBehaviour
 {
+
+    public static NARRATORSCRIPT instance;
+
     public Vector3 RISEPos;
     public bool RISINGBool;
     public bool ROSEBool;
@@ -14,8 +17,13 @@ public class NARRATORSCRIPT : MonoBehaviour
 
     public GameObject healthBarObj;
     public Slider healthBar;
+
+    public GameObject playerHealthBar;
+
+
+
     public float currentHealth;
-    public float maxHealth = 100;
+    public float maxHealth = 10;
 
     [SerializeField] GameObject Player;
     [SerializeField] GameObject NARRATORCANNON;
@@ -24,20 +32,63 @@ public class NARRATORSCRIPT : MonoBehaviour
     public float timeSinceLastATTACK;
     public float ATTACKInterval;
 
+    public GameObject effect;
+   
+
+
     void Start()
     {
-        RISEPos = new Vector3(200, 75, 500);
+
+        Invoke(nameof(BarEnable), 10); //
+
+        Invoke(nameof(riseModel), 12);
+        instance = this;
+        Invoke(nameof(NARRATORRISE), 12);
+
+
+        effect.SetActive(false);
         
-        Invoke(nameof(NARRATORRISE), 6);
 
         healthBar = healthBarObj.GetComponentInChildren<Slider>();
+
+
+        
+
+
         currentHealth = maxHealth;
         healthBar.value = currentHealth;
         healthBar.maxValue = maxHealth;
     }
 
+
+    void BarEnable()
+    {
+
+        healthBarObj.gameObject.SetActive(true);
+        playerHealthBar.gameObject.SetActive(true);
+
+
+
+
+
+    }
+
+
+    void riseModel()
+    {
+
+        RISEPos = new Vector3(250, 30, 500);
+
+    }
+
+    //250
+
+
     void Update()
     {
+
+      
+
         if (RISINGBool)
         {
             gameObject.transform.position = Vector3.MoveTowards(transform.position ,RISEPos, RISESpeed * Time.deltaTime);
@@ -52,7 +103,7 @@ public class NARRATORSCRIPT : MonoBehaviour
         if (ROSEBool)
         {
             //Animasyon
-            Invoke(nameof(NARRATORCOMBATSTART), 4);
+            Invoke(nameof(NARRATORCOMBATSTART), 1f);
         }
 
         if (COMBATBool)
@@ -67,7 +118,11 @@ public class NARRATORSCRIPT : MonoBehaviour
         
         if (currentHealth <= 0)
         {
+
             end();
+            
+
+
         }
     }
 
@@ -96,7 +151,7 @@ public class NARRATORSCRIPT : MonoBehaviour
 
     public void Cannonned()
     {
-        currentHealth -= 20;
+        currentHealth -= 40;
         healthBar.value = currentHealth;
     }
 
@@ -107,8 +162,47 @@ public class NARRATORSCRIPT : MonoBehaviour
 
     public void end()
     {
+        PlayerAttackScript.instance.playerHealthCanvas.SetActive(false);
+        PlayerAttackScript.instance.playerHealthCanvas.SetActive(false);
+        PlayerAttackScript.instance.bossHealthCanvas.SetActive(false);
+
+
+
+
+        bossArenaScript.Instance.BossDeath();
+
+        EndDoorScript.instance.IfbossDead();
+
+
+         Invoke(nameof(openEffect), 1.3f);
+         Destroy(gameObject,3f);
 
     }
+
+    void openEffect()
+    {
+        effect.SetActive(true);
+
+
+
+    }
+
+    public void spawnRoom()
+    {
+
+        EndDoorScript.instance.IfbossDead();
+
+
+    }
+
+    public void endAgain()
+    {
+        Destroy(gameObject);
+
+        
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("FireBall"))

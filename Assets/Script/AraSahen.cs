@@ -193,6 +193,7 @@ quest1Music.Play();
     {
 
         PlayerInteract.instance.duvar.GetComponent<MeshRenderer>().enabled = false;
+        PlayerInteract.instance.tahtalar.SetActive(false);
 
 
     }

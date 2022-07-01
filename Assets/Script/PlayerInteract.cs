@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class PlayerInteract : MonoBehaviour
 {
- 
 
+    public GameObject tahtalar;
     public GameObject duvar;
 
     public LayerMask bes;
@@ -189,6 +189,13 @@ public class PlayerInteract : MonoBehaviour
 
                         InteractedGameObject.GetComponent<epicbook>().KeepEpicBook();
 
+
+                        break;
+
+
+                    case interactTypes.endDoor:
+
+                        InteractedGameObject.GetComponent<sonGapiScript>().OpenEndDoor();
 
                         break;
 

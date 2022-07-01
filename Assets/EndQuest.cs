@@ -48,7 +48,7 @@ public class EndQuest : MonoBehaviour
         }
 
 
-        if (MagicPower.CanFire == true)
+        if (MagicPower.CanFire == true)  // kitabý aldýktan sonra ENDNPC nin yok olma kondisyonlarýndan biri
         {
 
             Destroy(this);

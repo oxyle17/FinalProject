@@ -14,7 +14,7 @@ public class FireBallScript : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        Destroy(gameObject, 5);
+        Destroy(gameObject, 10);
 
     }
 

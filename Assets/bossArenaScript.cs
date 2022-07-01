@@ -4,17 +4,36 @@ using UnityEngine;
 
 public class bossArenaScript : MonoBehaviour
 {
+
+    public static bossArenaScript Instance;
+
     [SerializeField] Canvas narratorCanvas;
     [SerializeField] Canvas BlackScreen;
     [SerializeField] Canvas Hands;
 
-    [SerializeField] AudioSource bossmusic;
+    public AudioSource bossmusic;
     [SerializeField] AudioSource narratorSound;
+    [SerializeField] AudioSource bossDeathSound;
+
+    public static bool CanOpen = false;
+
+   
+    
  
     void Start()
     {
+
+        PlayerAttackScript.instance.canvaslar.SetActive(true);
+
+      
+            Invoke(nameof(PlayerAttackScript.instance.dokunma), 25);
+
+
+        Instance = this;
         Hands.enabled = false;
-        MagicPower.CanFire = true;
+
+        MagicPower.CanFire = true; // boss arena baslangic
+
         narratorCanvas.enabled = false;
         BlackScreen.enabled = true;
         bossArena();
@@ -49,6 +68,20 @@ public class bossArenaScript : MonoBehaviour
 
     }
 
+   public void BossDeath()
+    {
+
+        bossDeathSound.Play();
+        Invoke(nameof(closeMusic), 3);
+
+    }
+
+    void closeMusic()
+    {
+
+        bossmusic.Stop();
+
+    }
 
     void openScreen()
     {

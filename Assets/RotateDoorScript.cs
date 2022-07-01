@@ -20,6 +20,7 @@ public class RotateDoorScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         currentRot = gameObject.transform.localRotation;
 
         if (opening && gameObject.transform.rotation.y <= openRot.y)

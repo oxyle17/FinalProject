@@ -12,7 +12,7 @@ public class Tavern : MonoBehaviour
 
     float count;
 
-    public GameObject women;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -21,7 +21,7 @@ public class Tavern : MonoBehaviour
         kütüphane.SetActive(true);
         ruinKütüphane.SetActive(false);
 
-
+       
 
     }
 
@@ -40,6 +40,7 @@ public class Tavern : MonoBehaviour
 
             if (MagicPower.instance.canExit == true)
             {
+                MagicPower.CanFire = false;
 
                 count++;
 
@@ -50,7 +51,8 @@ public class Tavern : MonoBehaviour
                     ruinKütüphane.SetActive(true);
                     dumanlar.SetActive(false);
 
-                    women.SetActive(false);
+                    MagicPower.CanFire = false; // tavernaya girdiginde kapatma
+                  
 
 
                 }
@@ -58,7 +60,7 @@ public class Tavern : MonoBehaviour
                 {
                    other.transform.position = changeTo.position;
 
-                   MagicPower.CanFire = false;
+                   MagicPower.CanFire = false; // tavernaya girme
 
                 }
 

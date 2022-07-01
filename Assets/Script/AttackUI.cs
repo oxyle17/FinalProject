@@ -12,7 +12,7 @@ public class AttackUI : MonoBehaviour
 
     void Start()
     {
-        idle.enabled = true;
+       // idle.enabled = true;
 
         Debug.Log("AtackUI");
 

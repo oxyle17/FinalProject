@@ -38,7 +38,7 @@ public class FoodDetectorScript : MonoBehaviour
         if (cookable == true)
         {
 
-            MagicPower.CanFire = true;
+            MagicPower.CanFire = true;   // yemeyi pisirme kondisyonu
 
 
         }

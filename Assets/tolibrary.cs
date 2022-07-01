@@ -9,7 +9,9 @@ public class tolibrary : MonoBehaviour
 
     public GameObject duman;
 
-    
+    public GameObject women;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,7 +40,7 @@ public class tolibrary : MonoBehaviour
              {
                other.transform.position = changeTo.position;
                duman.SetActive(true);
-
+               women.SetActive(false);
 
              }
 

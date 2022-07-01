@@ -12,6 +12,9 @@ public class bombexploded : MonoBehaviour
     public AudioSource expo;
 
     public float count;
+
+    public Camera cam;
+    
     void Start()
     {
         
@@ -33,12 +36,21 @@ public class bombexploded : MonoBehaviour
 
             if (count == 1)
             {
- BombButton.instance.bombTimerSound.Stop();
+             
+            BombButton.instance.bombTimerSound.Stop();
             BombButton.instance.RunCanvas.enabled = false;
 
             rock.transform.position = rockTarget.position;
 
             expo.Play();
+
+
+
+
+               
+
+
+
             }
 
             if (count > 1)
@@ -55,5 +67,9 @@ public class bombexploded : MonoBehaviour
 
 
     }
+
+
+    
+
 
 }

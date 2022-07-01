@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class sofraVFX : MonoBehaviour
 {
 
+    public static bool BossCanvasOpen = false;
+
+
     public static sofraVFX instance;
 
     public ParticleSystem MagicSmoke;
@@ -57,6 +60,7 @@ public class sofraVFX : MonoBehaviour
     void Start()
     {
 
+        
         bossCanvas.enabled = false;
 
         instance = this;
@@ -155,7 +159,7 @@ public class sofraVFX : MonoBehaviour
     public void getEffect()
     {
 
-        MagicPower.CanFire = false;
+        MagicPower.CanFire = false; // yemegi pisirdikten sonra
 
 
         fx1.Play();
@@ -245,7 +249,7 @@ public class sofraVFX : MonoBehaviour
         narCan2.enabled = true;
         narSon2.Play();
 
-        appleEffectSound2.Stop();
+        Invoke(nameof(a), 4.5f); 
     }
 
 
@@ -286,5 +290,11 @@ public class sofraVFX : MonoBehaviour
 
     }
 
+    void a()
+    {
 
+        appleEffectSound2.Stop();
+
+
+    }
 }

@@ -18,6 +18,8 @@ public class buttonScript : MonoBehaviour
 
     public void startGameButton()
     {
+
+
         source.Stop();
 
         SceneManager.LoadScene(2);
@@ -25,6 +27,14 @@ public class buttonScript : MonoBehaviour
 
     }
 
+    public void quitGameButton()
+    {
+
+
+        Application.Quit();
+
+
+    }
 
     
 }

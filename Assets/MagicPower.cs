@@ -19,17 +19,25 @@ public class MagicPower : MonoBehaviour
 
     void Start()
     {
+
         instance = this;
         achiement.enabled = false;
 
 
         gameObject.GetComponent<IneractionDome>().InteractXD = interactTypes.numb;
 
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (CanFire == true)
+        {
+
+            Debug.Log("canfire");
+        }
 
         if (achiementSound.isPlaying == false)
         {
@@ -42,7 +50,7 @@ public class MagicPower : MonoBehaviour
 
     }
 
-    public void keepBook()
+    public  void keepBook()
     {
         pickupSound.Play();
 
@@ -62,7 +70,11 @@ public class MagicPower : MonoBehaviour
         achiementSound.Play();
 
         achiement.enabled = true;
+
+
         CanFire = true;
+
+        
 
         canExit = true;
 
